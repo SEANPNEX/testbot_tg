@@ -1,0 +1,51 @@
+[
+	{
+		"type" : "function",
+		"function" : {
+			"name" : "marshoai_meogirl__meogirl",
+			"description" : "介绍Meogirl"
+		}
+	},
+	{
+		"type": "function",
+		"function": {
+			"name": "marshoai_meogirl__search",
+			"description": "查找/搜索 某角色/事物 (使用萌娘百科)",
+			"parameters": {
+				"type": "object",
+				"properties": {
+					"msg": {
+						"type": "string",
+						"description": "搜索关键词"
+					},
+					"num": {
+						"type": "integer",
+						"description": "数据显示条数, 默认3, 可留空"
+					}
+				}
+			},
+			"required": [
+				"msg"
+			]
+		}
+	},
+	{
+		"type" : "function",
+		"function" : {
+			"name" : "marshoai_meogirl__introduce",
+			"description" : "介绍/展示 某角色/事物 (使用萌娘百科)",
+			"parameters" : {
+				"type" : "object",
+				"properties" : {
+					"msg" : {
+						"type": "string",
+						"description": "关键词"
+					}
+				}
+			},
+			"required": [
+                "msg"
+            ]
+		}
+	}
+]

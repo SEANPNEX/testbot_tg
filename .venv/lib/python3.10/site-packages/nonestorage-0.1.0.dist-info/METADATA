@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: nonestorage
+Version: 0.1.0
+Summary: Simple library that provides local storage folder detect
+License-File: LICENSE
+Requires-Python: <4.0,>=3.9
+Description-Content-Type: text/markdown
+
+# NoneStorage
+
+Simple library that provides local storage folder detect
+
+## Usage
+
+```python
+from pathlib import Path
+
+from nonestorage import user_data_dir, user_config_dir, user_cache_dir
+
+data_dir: Path = user_data_dir("appname")
+config_dir: Path = user_config_dir("appname", roaming=True)
+cache_dir: Path = user_cache_dir("appname", roaming=False)
+```

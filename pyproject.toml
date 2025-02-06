@@ -1,0 +1,15 @@
+[project]
+name = "testbot_tg"
+version = "0.1.0"
+description = "testbot_tg"
+readme = "README.md"
+requires-python = ">=3.9, <4.0"
+
+[tool.nonebot]
+adapters = [
+    {name = "Telegram", module_name = "nonebot.adapters.telegram"}
+    
+]
+plugins = ["nonebot_plugin_status", "nonebot_plugin_logpile", "YetAnotherPicSearch", "nonebot_plugin_setu_now", "nonebot_plugin_picsetu", "nonebot_plugin_deepseek", "nonebot_plugin_marshoai"]
+plugin_dirs = []
+builtin_plugins = ["echo", "single_session"]

@@ -1,0 +1,905 @@
+2025-02-06 03:10:14.934 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_logpile"
+2025-02-06 03:10:14.935 | ERROR    | nonebot:load_plugin:198 - Failed to import "YetAnotherPicSearch"
+Traceback (most recent call last):
+
+  File "/Users/sean/workspace/testbot_tg/bot.py", line 14, in <module>
+    nonebot.load_plugin("YetAnotherPicSearch")
+    │       └ <function load_plugin at 0x10634c160>
+    └ <module 'nonebot' from '/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/__init__.py'>
+
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/plugin/load.py", line 42, in load_plugin
+    return manager.load_plugin(module_path)
+           │       │           └ 'YetAnotherPicSearch'
+           │       └ <function PluginManager.load_plugin at 0x1061b2320>
+           └ PluginManager(available_plugins={'YetAnotherPicSearch': 'YetAnotherPicSearch'})
+> File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/plugin/manager.py", line 169, in load_plugin
+    module = importlib.import_module(self._third_party_plugin_ids[name])
+             │         │             │    │                       └ 'YetAnotherPicSearch'
+             │         │             │    └ {'YetAnotherPicSearch': 'YetAnotherPicSearch'}
+             │         │             └ PluginManager(available_plugins={'YetAnotherPicSearch': 'YetAnotherPicSearch'})
+             │         └ <function import_module at 0x10490c550>
+             └ <module 'importlib' from '/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/importlib/__init__.py'>
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           │          │           │    │        │        └ 0
+           │          │           │    │        └ None
+           │          │           │    └ 0
+           │          │           └ 'YetAnotherPicSearch'
+           │          └ <function _gcd_import at 0x1047c3400>
+           └ <module '_frozen_importlib' (frozen)>
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+
+ModuleNotFoundError: No module named 'YetAnotherPicSearch'
+2025-02-06 03:10:14.939 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.reply, lineno=9)
+2025-02-06 03:10:14.939 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "reply" from "plugins.example.reply"
+2025-02-06 03:10:14.940 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=13)
+2025-02-06 03:10:14.940 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=23)
+2025-02-06 03:10:14.940 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=32)
+2025-02-06 03:10:14.940 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=41)
+2025-02-06 03:10:14.941 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=55)
+2025-02-06 03:10:14.941 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=63)
+2025-02-06 03:10:14.941 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "photo" from "plugins.example.photo"
+2025-02-06 03:10:14.941 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='inline', module=plugins.example.inline, lineno=16)
+2025-02-06 03:10:14.942 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='inline', module=plugins.example.inline, lineno=54)
+2025-02-06 03:10:14.942 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "inline" from "plugins.example.inline"
+2025-02-06 03:10:14.942 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.hello, lineno=6)
+2025-02-06 03:10:14.942 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "hello" from "plugins.example.hello"
+2025-02-06 03:10:14.943 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.mention, lineno=16)
+2025-02-06 03:10:14.943 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "mention" from "plugins.example.mention"
+2025-02-06 03:10:14.944 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.download, lineno=16)
+2025-02-06 03:10:14.944 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "download" from "plugins.example.download"
+2025-02-06 03:10:14.944 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=9)
+2025-02-06 03:10:14.945 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=14)
+2025-02-06 03:10:14.945 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=19)
+2025-02-06 03:10:14.945 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=27)
+2025-02-06 03:10:14.945 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=35)
+2025-02-06 03:10:14.945 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=40)
+2025-02-06 03:10:14.946 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "sendxxx" from "plugins.example.sendxxx"
+2025-02-06 03:10:14.946 | WARNING  | __main__:<module>:18 - Always use `nb run` to start the bot instead of manually running!
+2025-02-06 03:10:14.946 | SUCCESS  | nonebot:run:336 - Running NoneBot...
+2025-02-06 03:10:14.946 | SUCCESS  | nonebot:run:117 - Loaded adapters: Telegram
+2025-02-06 03:10:14.956 | INFO     | uvicorn:_serve:83 - Started server process [2131]
+2025-02-06 03:10:14.956 | INFO     | uvicorn:startup:48 - Waiting for application startup.
+2025-02-06 03:10:14.957 | DEBUG    | nonebot:log:336 - Telegram | Calling API getMe
+2025-02-06 03:10:14.957 | DEBUG    | nonebot:log:336 - Telegram | Calling API {}
+2025-02-06 03:10:14.982 | INFO     | uvicorn:startup:62 - Application startup complete.
+2025-02-06 03:10:14.982 | INFO     | uvicorn:_log_started_message:215 - Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+2025-02-06 03:10:15.840 | INFO     | nonebot:log:336 - Telegram | Delete old webhook
+2025-02-06 03:10:15.842 | DEBUG    | nonebot:log:336 - Telegram | Calling API deleteWebhook
+2025-02-06 03:10:15.842 | DEBUG    | nonebot:log:336 - Telegram | Calling API {}
+2025-02-06 03:10:16.195 | INFO     | nonebot:log:336 - Telegram | Start poll
+2025-02-06 03:10:16.212 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:10:16.212 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:10:46.590 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:10:46.590 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:11:16.998 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:11:16.999 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:11:47.516 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:11:47.516 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:12:18.030 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:12:18.030 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:12:48.422 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:12:48.422 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:13:18.870 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:13:18.871 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:13:49.427 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:13:49.427 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:14:19.889 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:14:19.889 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:14:50.401 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:14:50.402 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:15:21.030 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:15:21.030 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:15:51.542 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:15:51.542 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:16:22.056 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:16:22.056 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:16:52.673 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:16:52.674 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:17:23.089 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:17:23.090 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:17:53.612 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:17:53.613 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:18:24.026 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:18:24.027 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:18:54.535 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:18:54.535 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:19:25.050 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:19:25.050 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:19:55.472 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:19:55.473 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:20:26.097 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:20:26.097 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:20:56.509 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:20:56.510 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:21:27.133 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:21:27.133 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:21:57.638 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:21:57.639 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:22:28.057 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:22:28.057 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:22:58.471 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:22:58.472 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:23:28.985 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:23:28.985 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:23:59.399 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:23:59.399 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:24:29.914 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:24:29.915 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:24:48.871 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:24:48.871 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'offset': '997538904', 'timeout': '30'}
+2025-02-06 03:24:49.273 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:24:49.273 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'offset': '997538906', 'timeout': '30'}
+2025-02-06 03:24:49.298 | DEBUG    | nonebot:log:336 - Telegram | {'chat': {'id': -1002321088595, 'type': 'supergroup', 'title': '并非并非 chat'}, 'from_': {'id': 1087968824, 'is_bot': True, 'first_name': 'Group', 'username': 'GroupAnonymousBot'}, 'date': 1738830288, 'old_chat_member': {'status': 'left', 'user': {'id': 8186306331, 'is_bot': True, 'first_name': 'testbot', 'username': 'LothricGreatSword_test_001_bot'}}, 'new_chat_member': {'status': 'member', 'user': {'id': 8186306331, 'is_bot': True, 'first_name': 'testbot', 'username': 'LothricGreatSword_test_001_bot'}}}
+2025-02-06 03:24:49.298 | SUCCESS  | nonebot:handle_event:535 - Telegram 8186306331 | [notice.chat_member.updated]: {'chat': {'id': -1002321088595, 'type': 'supergroup', 'title': '并非并非 chat'}, 'from': {'id': 1087968824, 'is_bot': True, 'first_name': 'Group', 'username': 'GroupAnonymousBot'}, 'date': 1738830288, 'old_chat_member': {'status': 'left', 'user': {'id': 8186306331, 'is_bot': True, 'first_name': 'testbot', 'username': 'LothricGreatSword_test_001_bot'}}, 'new_chat_member': {'status': 'member', 'user': {'id': 8186306331, 'is_bot': True, 'first_name': 'testbot', 'username': 'LothricGreatSword_test_001_bot'}}}
+2025-02-06 03:24:49.299 | DEBUG    | nonebot:handle_event:573 - Checking for matchers in priority 1...
+2025-02-06 03:24:49.300 | DEBUG    | nonebot:log:336 - Telegram | {'message_id': 2, 'from_': {'id': 1087968824, 'is_bot': True, 'first_name': 'Group', 'username': 'GroupAnonymousBot'}, 'chat': {'id': -1002321088595, 'type': 'supergroup', 'title': '并非并非 chat'}, 'date': 1738830288, 'new_chat_members': [{'id': 8186306331, 'is_bot': True, 'first_name': 'testbot', 'username': 'LothricGreatSword_test_001_bot'}], 'sender_chat': {'id': -1002321088595, 'type': 'supergroup', 'title': '并非并非 chat'}}
+2025-02-06 03:24:49.300 | SUCCESS  | nonebot:handle_event:535 - Telegram 8186306331 | [notice.chat_member.new]: {'message_id': 2, 'from': {'id': 1087968824, 'is_bot': True, 'first_name': 'Group', 'username': 'GroupAnonymousBot'}, 'chat': {'id': -1002321088595, 'type': 'supergroup', 'title': '并非并非 chat'}, 'date': 1738830288, 'new_chat_members': [{'id': 8186306331, 'is_bot': True, 'first_name': 'testbot', 'username': 'LothricGreatSword_test_001_bot'}], 'sender_chat': {'id': -1002321088595, 'type': 'supergroup', 'title': '并非并非 chat'}}
+2025-02-06 03:24:49.300 | DEBUG    | nonebot:handle_event:573 - Checking for matchers in priority 1...
+2025-02-06 03:24:49.300 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=nonebot.plugins.echo, lineno=17)
+2025-02-06 03:24:49.300 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.reply, lineno=9)
+2025-02-06 03:24:49.300 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=13)
+2025-02-06 03:24:49.301 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=23)
+2025-02-06 03:24:49.301 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=32)
+2025-02-06 03:24:49.301 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=41)
+2025-02-06 03:24:49.301 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=55)
+2025-02-06 03:24:49.301 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=63)
+2025-02-06 03:24:49.301 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='inline', module=plugins.example.inline, lineno=16)
+2025-02-06 03:24:49.301 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='inline', module=plugins.example.inline, lineno=54)
+2025-02-06 03:24:49.301 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.hello, lineno=6)
+2025-02-06 03:24:49.301 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.mention, lineno=16)
+2025-02-06 03:24:49.301 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.download, lineno=16)
+2025-02-06 03:24:49.301 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=9)
+2025-02-06 03:24:49.301 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=14)
+2025-02-06 03:24:49.301 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=19)
+2025-02-06 03:24:49.301 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=27)
+2025-02-06 03:24:49.301 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=35)
+2025-02-06 03:24:49.301 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=40)
+2025-02-06 03:24:49.301 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=nonebot.plugins.echo, lineno=17)
+2025-02-06 03:24:49.302 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.reply, lineno=9)
+2025-02-06 03:24:49.302 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=13)
+2025-02-06 03:24:49.302 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=23)
+2025-02-06 03:24:49.302 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=32)
+2025-02-06 03:24:49.302 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=41)
+2025-02-06 03:24:49.302 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=55)
+2025-02-06 03:24:49.302 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=63)
+2025-02-06 03:24:49.302 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='inline', module=plugins.example.inline, lineno=16)
+2025-02-06 03:24:49.302 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='inline', module=plugins.example.inline, lineno=54)
+2025-02-06 03:24:49.302 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.hello, lineno=6)
+2025-02-06 03:24:49.302 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.mention, lineno=16)
+2025-02-06 03:24:49.302 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.download, lineno=16)
+2025-02-06 03:24:49.302 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=9)
+2025-02-06 03:24:49.302 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=14)
+2025-02-06 03:24:49.302 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=19)
+2025-02-06 03:24:49.302 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=27)
+2025-02-06 03:24:49.302 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=35)
+2025-02-06 03:24:49.302 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=40)
+2025-02-06 03:24:49.303 | DEBUG    | nonebot:handle_event:573 - Checking for matchers in priority 10...
+2025-02-06 03:24:49.303 | DEBUG    | nonebot:handle_event:573 - Checking for matchers in priority 10...
+2025-02-06 03:24:49.303 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.shutdown, lineno=17)
+2025-02-06 03:24:49.303 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=nonebot_plugin_status.common, lineno=17)
+2025-02-06 03:24:49.303 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.shutdown, lineno=17)
+2025-02-06 03:24:49.303 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=nonebot_plugin_status.common, lineno=17)
+2025-02-06 03:24:49.304 | DEBUG    | nonebot:handle_event:601 - Checking for matchers completed
+2025-02-06 03:24:49.304 | DEBUG    | nonebot:handle_event:601 - Checking for matchers completed
+2025-02-06 03:25:19.681 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:25:19.681 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'offset': '997538906', 'timeout': '30'}
+2025-02-06 03:25:27.568 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:25:27.568 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'offset': '997538907', 'timeout': '30'}
+2025-02-06 03:25:27.589 | DEBUG    | nonebot:log:336 - Telegram | {'chat': {'id': -1002321088595, 'type': 'supergroup', 'title': '并非并非 chat'}, 'from_': {'id': 7525835156, 'is_bot': False, 'first_name': '?NepElder?', 'language_code': 'en'}, 'date': 1738830327, 'old_chat_member': {'status': 'member', 'user': {'id': 8186306331, 'is_bot': True, 'first_name': 'testbot', 'username': 'LothricGreatSword_test_001_bot'}}, 'new_chat_member': {'status': 'administrator', 'user': {'id': 8186306331, 'is_bot': True, 'first_name': 'testbot', 'username': 'LothricGreatSword_test_001_bot'}, 'can_be_edited': False, 'is_anonymous': False, 'can_manage_chat': True, 'can_delete_messages': True, 'can_manage_video_chats': True, 'can_restrict_members': True, 'can_promote_members': False, 'can_change_info': True, 'can_invite_users': True, 'can_post_stories': True, 'can_edit_stories': True, 'can_delete_stories': True, 'can_pin_messages': True, 'can_manage_topics': True}}
+2025-02-06 03:25:27.590 | SUCCESS  | nonebot:handle_event:535 - Telegram 8186306331 | [notice.chat_member.updated]: {'chat': {'id': -1002321088595, 'type': 'supergroup', 'title': '并非并非 chat'}, 'from': {'id': 7525835156, 'is_bot': False, 'first_name': '?NepElder?', 'language_code': 'en'}, 'date': 1738830327, 'old_chat_member': {'status': 'member', 'user': {'id': 8186306331, 'is_bot': True, 'first_name': 'testbot', 'username': 'LothricGreatSword_test_001_bot'}}, 'new_chat_member': {'status': 'administrator', 'user': {'id': 8186306331, 'is_bot': True, 'first_name': 'testbot', 'username': 'LothricGreatSword_test_001_bot'}, 'can_be_edited': False, 'is_anonymous': False, 'can_manage_chat': True, 'can_delete_messages': True, 'can_manage_video_chats': True, 'can_restrict_members': True, 'can_promote_members': False, 'can_change_info': True, 'can_invite_users': True, 'can_post_stories': True, 'can_edit_stories': True, 'can_delete_stories': True, 'can_pin_messages': True, 'can_manage_topics': True}}
+2025-02-06 03:25:27.590 | DEBUG    | nonebot:handle_event:573 - Checking for matchers in priority 1...
+2025-02-06 03:25:27.590 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=nonebot.plugins.echo, lineno=17)
+2025-02-06 03:25:27.590 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.reply, lineno=9)
+2025-02-06 03:25:27.590 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=13)
+2025-02-06 03:25:27.590 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=23)
+2025-02-06 03:25:27.590 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=32)
+2025-02-06 03:25:27.590 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=41)
+2025-02-06 03:25:27.591 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=55)
+2025-02-06 03:25:27.591 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=63)
+2025-02-06 03:25:27.591 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='inline', module=plugins.example.inline, lineno=16)
+2025-02-06 03:25:27.591 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='inline', module=plugins.example.inline, lineno=54)
+2025-02-06 03:25:27.591 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.hello, lineno=6)
+2025-02-06 03:25:27.591 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.mention, lineno=16)
+2025-02-06 03:25:27.591 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.download, lineno=16)
+2025-02-06 03:25:27.591 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=9)
+2025-02-06 03:25:27.591 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=14)
+2025-02-06 03:25:27.591 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=19)
+2025-02-06 03:25:27.591 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=27)
+2025-02-06 03:25:27.591 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=35)
+2025-02-06 03:25:27.591 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=40)
+2025-02-06 03:25:27.591 | DEBUG    | nonebot:handle_event:573 - Checking for matchers in priority 10...
+2025-02-06 03:25:27.592 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=plugins.shutdown, lineno=17)
+2025-02-06 03:25:27.592 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='message', module=nonebot_plugin_status.common, lineno=17)
+2025-02-06 03:25:27.592 | DEBUG    | nonebot:handle_event:601 - Checking for matchers completed
+2025-02-06 03:25:42.823 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:25:42.824 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'offset': '997538908', 'timeout': '30'}
+2025-02-06 03:25:42.842 | DEBUG    | nonebot:log:336 - Telegram | {'message_id': 3, 'date': 1738830342, 'chat': {'id': -1002321088595, 'type': 'supergroup', 'title': '并非并非 chat'}, 'message': [{'type': 'mention', 'data': {'text': '@LothricGreatSword_test_001_bot'}}, {'type': 'text', 'data': {'text': ' '}}, {'type': 'bot_command', 'data': {'text': '/echo'}}, {'type': 'text', 'data': {'text': ' 1'}}], 'original_message': [{'type': 'mention', 'data': {'text': '@LothricGreatSword_test_001_bot'}}, {'type': 'text', 'data': {'text': ' '}}, {'type': 'bot_command', 'data': {'text': '/echo'}}, {'type': 'text', 'data': {'text': ' 1'}}], 'from_': {'id': 1087968824, 'is_bot': True, 'first_name': 'Group', 'username': 'GroupAnonymousBot'}, 'sender_chat': {'id': -1002321088595, 'type': 'supergroup', 'title': '并非并非 chat'}}
+2025-02-06 03:25:42.842 | SUCCESS  | nonebot:handle_event:535 - Telegram 8186306331 | [message.group]: Message 3 from 1087968824@[Chat -1002321088595]: /echo 1
+2025-02-06 03:25:42.842 | DEBUG    | nonebot:handle_event:573 - Checking for matchers in priority 1...
+2025-02-06 03:25:42.843 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='inline', module=plugins.example.inline, lineno=16)
+2025-02-06 03:25:42.843 | TRACE    | nonebot:_check_matcher:391 - Permission conditions not met for Matcher(type='inline', module=plugins.example.inline, lineno=54)
+2025-02-06 03:25:42.843 | INFO     | nonebot:_run_matcher:435 - Event will be handled by Matcher(type='message', module=plugins.example.hello, lineno=6)
+2025-02-06 03:25:42.843 | DEBUG    | nonebot:_run_matcher:455 - Running Matcher(type='message', module=plugins.example.hello, lineno=6)
+2025-02-06 03:25:42.843 | TRACE    | nonebot:simple_run:838 - Matcher(type='message', module=plugins.example.hello, lineno=6) run with incoming args: bot=Bot(type='Telegram', self_id='8186306331'), event=GroupMessageEvent(telegram_model=Update(update_id=997538907, message=Message(message_id=3, message_thread_id=None, from_=User(id=1087968824, is_bot=True, first_name='Group', last_name=None, username='GroupAnonymousBot', language_code=None, is_premium=None, added_to_attachment_menu=None, can_join_groups=None, can_read_all_group_messages=None, supports_inline_queries=None, can_connect_to_business=None, has_main_web_app=None), sender_chat=Chat(id=-1002321088595, type='supergroup', title='并非并非 chat', username=None, first_name=None, last_name=None, is_forum=None), sender_boost_count=None, sender_business_bot=None, date=1738830342, business_connection_id=None, chat=Chat(id=-1002321088595, type='supergroup', title='并非并非 chat', username=None, first_name=None, last_name=None, is_forum=None), forward_origin=None, is_topic_message=None, is_automatic_forward=None, reply_to_message=None, external_reply=None, quote=None, reply_to_story=None, via_bot=None, edit_date=None, has_protected_content=None, is_from_offline=None, media_group_id=None, author_signature=None, text=None, entities=None, link_preview_options=None, effect_id=None, animation=None, audio=None, document=None, paid_media=None, photo=None, sticker=None, story=None, video=None, video_note=None, voice=None, caption=None, caption_entities=None, show_caption_above_media=None, has_media_spoiler=None, contact=None, dice=None, game=None, poll=None, venue=None, location=None, new_chat_members=None, left_chat_member=None, new_chat_title=None, new_chat_photo=None, delete_chat_photo=None, group_chat_created=None, supergroup_chat_created=None, channel_chat_created=None, message_auto_delete_timer_changed=None, migrate_to_chat_id=None, migrate_from_chat_id=None, pinned_message=None, invoice=None, successful_payment=None, refunded_payment=None, users_shared=None, chat_shared=None, connected_website=None, write_access_allowed=None, passport_data=None, proximity_alert_triggered=None, boost_added=None, chat_background_set=None, forum_topic_created=None, forum_topic_edited=None, forum_topic_closed=None, forum_topic_reopened=None, general_forum_topic_hidden=None, general_forum_topic_unhidden=None, giveaway_created=None, giveaway=None, giveaway_winners=None, giveaway_completed=None, video_chat_scheduled=None, video_chat_started=None, video_chat_ended=None, video_chat_participants_invited=None, web_app_data=None, reply_markup=None), edited_message=None, channel_post=None, edited_channel_post=None, business_connection=None, business_message=None, edited_business_message=None, deleted_business_messages=None, message_reaction=None, message_reaction_count=None, inline_query=None, chosen_inline_result=None, callback_query=None, shipping_query=None, pre_checkout_query=None, purchased_paid_media=None, poll=None, poll_answer=None, my_chat_member=None, chat_member=None, chat_join_request=None, chat_boost=None, removed_chat_boost=None), message_id=3, date=1738830342, chat=Chat(id=-1002321088595, type='supergroup', title='并非并非 chat', username=None, first_name=None, last_name=None, is_forum=None), forward_from=None, forward_from_chat=None, forward_from_message_id=None, forward_signature=None, forward_sender_name=None, forward_date=None, via_bot=None, has_protected_content=None, media_group_id=None, author_signature=None, reply_to_message=None, message=/echo 1, original_message=@LothricGreatSword_test_001_bot /echo 1, from_=User(id=1087968824, is_bot=True, first_name='Group', last_name=None, username='GroupAnonymousBot', language_code=None, is_premium=None, added_to_attachment_menu=None, can_join_groups=None, can_read_all_group_messages=None, supports_inline_queries=None, can_connect_to_business=None, has_main_web_app=None), sender_chat=Chat(id=-1002321088595, type='supergroup', title='并非并非 chat', username=None, first_name=None, last_name=None, is_forum=None)), state={'_prefix': {'command': ('echo',), 'raw_command': '/echo', 'command_arg': 1, 'command_start': '/', 'command_whitespace': ' '}}
+2025-02-06 03:25:42.843 | DEBUG    | nonebot:simple_run:855 - Running handler Dependent(call=handle_hello)
+2025-02-06 03:25:42.859 | INFO     | nonebot:simple_run:872 - Matcher(type='message', module=plugins.example.hello, lineno=6) running complete
+2025-02-06 03:25:42.904 | INFO     | nonebot:_run_matcher:435 - Event will be handled by Matcher(type='message', module=nonebot.plugins.echo, lineno=17)
+2025-02-06 03:25:42.904 | DEBUG    | nonebot:_run_matcher:455 - Running Matcher(type='message', module=nonebot.plugins.echo, lineno=17)
+2025-02-06 03:25:42.904 | TRACE    | nonebot:simple_run:838 - Matcher(type='message', module=nonebot.plugins.echo, lineno=17) run with incoming args: bot=Bot(type='Telegram', self_id='8186306331'), event=GroupMessageEvent(telegram_model=Update(update_id=997538907, message=Message(message_id=3, message_thread_id=None, from_=User(id=1087968824, is_bot=True, first_name='Group', last_name=None, username='GroupAnonymousBot', language_code=None, is_premium=None, added_to_attachment_menu=None, can_join_groups=None, can_read_all_group_messages=None, supports_inline_queries=None, can_connect_to_business=None, has_main_web_app=None), sender_chat=Chat(id=-1002321088595, type='supergroup', title='并非并非 chat', username=None, first_name=None, last_name=None, is_forum=None), sender_boost_count=None, sender_business_bot=None, date=1738830342, business_connection_id=None, chat=Chat(id=-1002321088595, type='supergroup', title='并非并非 chat', username=None, first_name=None, last_name=None, is_forum=None), forward_origin=None, is_topic_message=None, is_automatic_forward=None, reply_to_message=None, external_reply=None, quote=None, reply_to_story=None, via_bot=None, edit_date=None, has_protected_content=None, is_from_offline=None, media_group_id=None, author_signature=None, text=None, entities=None, link_preview_options=None, effect_id=None, animation=None, audio=None, document=None, paid_media=None, photo=None, sticker=None, story=None, video=None, video_note=None, voice=None, caption=None, caption_entities=None, show_caption_above_media=None, has_media_spoiler=None, contact=None, dice=None, game=None, poll=None, venue=None, location=None, new_chat_members=None, left_chat_member=None, new_chat_title=None, new_chat_photo=None, delete_chat_photo=None, group_chat_created=None, supergroup_chat_created=None, channel_chat_created=None, message_auto_delete_timer_changed=None, migrate_to_chat_id=None, migrate_from_chat_id=None, pinned_message=None, invoice=None, successful_payment=None, refunded_payment=None, users_shared=None, chat_shared=None, connected_website=None, write_access_allowed=None, passport_data=None, proximity_alert_triggered=None, boost_added=None, chat_background_set=None, forum_topic_created=None, forum_topic_edited=None, forum_topic_closed=None, forum_topic_reopened=None, general_forum_topic_hidden=None, general_forum_topic_unhidden=None, giveaway_created=None, giveaway=None, giveaway_winners=None, giveaway_completed=None, video_chat_scheduled=None, video_chat_started=None, video_chat_ended=None, video_chat_participants_invited=None, web_app_data=None, reply_markup=None), edited_message=None, channel_post=None, edited_channel_post=None, business_connection=None, business_message=None, edited_business_message=None, deleted_business_messages=None, message_reaction=None, message_reaction_count=None, inline_query=None, chosen_inline_result=None, callback_query=None, shipping_query=None, pre_checkout_query=None, purchased_paid_media=None, poll=None, poll_answer=None, my_chat_member=None, chat_member=None, chat_join_request=None, chat_boost=None, removed_chat_boost=None), message_id=3, date=1738830342, chat=Chat(id=-1002321088595, type='supergroup', title='并非并非 chat', username=None, first_name=None, last_name=None, is_forum=None), forward_from=None, forward_from_chat=None, forward_from_message_id=None, forward_signature=None, forward_sender_name=None, forward_date=None, via_bot=None, has_protected_content=None, media_group_id=None, author_signature=None, reply_to_message=None, message=/echo 1, original_message=@LothricGreatSword_test_001_bot /echo 1, from_=User(id=1087968824, is_bot=True, first_name='Group', last_name=None, username='GroupAnonymousBot', language_code=None, is_premium=None, added_to_attachment_menu=None, can_join_groups=None, can_read_all_group_messages=None, supports_inline_queries=None, can_connect_to_business=None, has_main_web_app=None), sender_chat=Chat(id=-1002321088595, type='supergroup', title='并非并非 chat', username=None, first_name=None, last_name=None, is_forum=None)), state={'_prefix': {'command': ('echo',), 'raw_command': '/echo', 'command_arg': 1, 'command_start': '/', 'command_whitespace': ' '}}
+2025-02-06 03:25:42.904 | DEBUG    | nonebot:simple_run:855 - Running handler Dependent(call=handle_echo)
+2025-02-06 03:25:42.904 | TRACE    | nonebot:_check_matcher:401 - Rule conditions not met for Matcher(type='message', module=plugins.example.reply, lineno=9)
+2025-02-06 03:25:42.904 | TRACE    | nonebot:_check_matcher:401 - Rule conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=13)
+2025-02-06 03:25:42.904 | TRACE    | nonebot:_check_matcher:401 - Rule conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=23)
+2025-02-06 03:25:42.904 | TRACE    | nonebot:_check_matcher:401 - Rule conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=32)
+2025-02-06 03:25:42.904 | TRACE    | nonebot:_check_matcher:401 - Rule conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=41)
+2025-02-06 03:25:42.904 | TRACE    | nonebot:_check_matcher:401 - Rule conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=55)
+2025-02-06 03:25:42.904 | TRACE    | nonebot:_check_matcher:401 - Rule conditions not met for Matcher(type='message', module=plugins.example.photo, lineno=63)
+2025-02-06 03:25:42.904 | TRACE    | nonebot:_check_matcher:401 - Rule conditions not met for Matcher(type='message', module=plugins.example.mention, lineno=16)
+2025-02-06 03:25:42.904 | TRACE    | nonebot:_check_matcher:401 - Rule conditions not met for Matcher(type='message', module=plugins.example.download, lineno=16)
+2025-02-06 03:25:42.905 | TRACE    | nonebot:_check_matcher:401 - Rule conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=9)
+2025-02-06 03:25:42.905 | TRACE    | nonebot:_check_matcher:401 - Rule conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=14)
+2025-02-06 03:25:42.905 | TRACE    | nonebot:_check_matcher:401 - Rule conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=19)
+2025-02-06 03:25:42.905 | TRACE    | nonebot:_check_matcher:401 - Rule conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=27)
+2025-02-06 03:25:42.905 | TRACE    | nonebot:_check_matcher:401 - Rule conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=35)
+2025-02-06 03:25:42.905 | TRACE    | nonebot:_check_matcher:401 - Rule conditions not met for Matcher(type='message', module=plugins.example.sendxxx, lineno=40)
+2025-02-06 03:25:42.906 | DEBUG    | nonebot:log:336 - Telegram | Calling API sendMessage
+2025-02-06 03:25:42.906 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'chat_id': '-1002321088595', 'text': '1'}
+2025-02-06 03:25:43.436 | INFO     | nonebot:simple_run:872 - Matcher(type='message', module=nonebot.plugins.echo, lineno=17) running complete
+2025-02-06 03:25:43.437 | DEBUG    | nonebot:_handle_stop_propagation:565 - Stop event propagation
+2025-02-06 03:25:43.438 | DEBUG    | nonebot:handle_event:601 - Checking for matchers completed
+2025-02-06 03:25:48.309 | INFO     | uvicorn:shutdown:263 - Shutting down
+2025-02-06 03:25:48.412 | INFO     | uvicorn:shutdown:67 - Waiting for application shutdown.
+2025-02-06 03:29:59.709 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_logpile"
+2025-02-06 03:29:59.710 | ERROR    | nonebot:load_plugin:198 - Failed to import "YetAnotherPicSearch"
+Traceback (most recent call last):
+
+  File "/Users/sean/workspace/testbot_tg/bot.py", line 14, in <module>
+    nonebot.load_plugin("YetAnotherPicSearch")
+    │       └ <function load_plugin at 0x1063b40d0>
+    └ <module 'nonebot' from '/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/__init__.py'>
+
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/plugin/load.py", line 42, in load_plugin
+    return manager.load_plugin(module_path)
+           │       │           └ 'YetAnotherPicSearch'
+           │       └ <function PluginManager.load_plugin at 0x106222290>
+           └ PluginManager(available_plugins={'YetAnotherPicSearch': 'YetAnotherPicSearch'})
+> File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/plugin/manager.py", line 169, in load_plugin
+    module = importlib.import_module(self._third_party_plugin_ids[name])
+             │         │             │    │                       └ 'YetAnotherPicSearch'
+             │         │             │    └ {'YetAnotherPicSearch': 'YetAnotherPicSearch'}
+             │         │             └ PluginManager(available_plugins={'YetAnotherPicSearch': 'YetAnotherPicSearch'})
+             │         └ <function import_module at 0x10497c4c0>
+             └ <module 'importlib' from '/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/importlib/__init__.py'>
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           │          │           │    │        │        └ 0
+           │          │           │    │        └ None
+           │          │           │    └ 0
+           │          │           └ 'YetAnotherPicSearch'
+           │          └ <function _gcd_import at 0x104833400>
+           └ <module '_frozen_importlib' (frozen)>
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+
+ModuleNotFoundError: No module named 'YetAnotherPicSearch'
+2025-02-06 03:29:59.714 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_waiter"
+2025-02-06 03:29:59.730 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_alconna:uniseg" from "nonebot_plugin_alconna.uniseg"
+2025-02-06 03:29:59.747 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_alconna"
+2025-02-06 03:29:59.749 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_localstore"
+2025-02-06 03:29:59.757 | DEBUG    | nonebot_plugin_deepseek:<module>:169 - load deepseek model: ['deepseek-chat', 'deepseek-reasoner']
+2025-02-06 03:29:59.781 | DEBUG    | nonebot_plugin_deepseek:decorator:85 - Succeeded to load function "get_web_content"
+2025-02-06 03:29:59.782 | TRACE    | nonebot:log:336 - Plugin-Alconna | Define new matcher AlconnaMatcher(type='', module=nonebot_plugin_deepseek, lineno=70)
+2025-02-06 03:29:59.783 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_deepseek"
+2025-02-06 03:30:29.913 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_logpile"
+2025-02-06 03:30:29.914 | ERROR    | nonebot:load_plugin:198 - Failed to import "YetAnotherPicSearch"
+Traceback (most recent call last):
+
+  File "/Users/sean/workspace/testbot_tg/bot.py", line 14, in <module>
+    nonebot.load_plugin("YetAnotherPicSearch")
+    │       └ <function load_plugin at 0x10274c0d0>
+    └ <module 'nonebot' from '/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/__init__.py'>
+
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/plugin/load.py", line 42, in load_plugin
+    return manager.load_plugin(module_path)
+           │       │           └ 'YetAnotherPicSearch'
+           │       └ <function PluginManager.load_plugin at 0x1025ba290>
+           └ PluginManager(available_plugins={'YetAnotherPicSearch': 'YetAnotherPicSearch'})
+> File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/plugin/manager.py", line 169, in load_plugin
+    module = importlib.import_module(self._third_party_plugin_ids[name])
+             │         │             │    │                       └ 'YetAnotherPicSearch'
+             │         │             │    └ {'YetAnotherPicSearch': 'YetAnotherPicSearch'}
+             │         │             └ PluginManager(available_plugins={'YetAnotherPicSearch': 'YetAnotherPicSearch'})
+             │         └ <function import_module at 0x100d084c0>
+             └ <module 'importlib' from '/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/importlib/__init__.py'>
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           │          │           │    │        │        └ 0
+           │          │           │    │        └ None
+           │          │           │    └ 0
+           │          │           └ 'YetAnotherPicSearch'
+           │          └ <function _gcd_import at 0x100bbf400>
+           └ <module '_frozen_importlib' (frozen)>
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+
+ModuleNotFoundError: No module named 'YetAnotherPicSearch'
+2025-02-06 03:30:29.922 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_waiter"
+2025-02-06 03:30:30.117 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_alconna:uniseg" from "nonebot_plugin_alconna.uniseg"
+2025-02-06 03:30:30.145 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_alconna"
+2025-02-06 03:30:30.147 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_localstore"
+2025-02-06 03:30:30.157 | DEBUG    | nonebot_plugin_deepseek:<module>:169 - load deepseek model: ['deepseek-chat', 'deepseek-reasoner']
+2025-02-06 03:30:30.186 | DEBUG    | nonebot_plugin_deepseek:decorator:85 - Succeeded to load function "get_web_content"
+2025-02-06 03:30:30.187 | TRACE    | nonebot:log:336 - Plugin-Alconna | Define new matcher AlconnaMatcher(type='', module=nonebot_plugin_deepseek, lineno=70)
+2025-02-06 03:30:30.187 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_deepseek"
+2025-02-06 03:30:53.096 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_logpile"
+2025-02-06 03:30:53.097 | ERROR    | nonebot:load_plugin:198 - Failed to import "YetAnotherPicSearch"
+Traceback (most recent call last):
+
+  File "/Users/sean/workspace/testbot_tg/bot.py", line 14, in <module>
+    nonebot.load_plugin("YetAnotherPicSearch")
+    │       └ <function load_plugin at 0x1029880d0>
+    └ <module 'nonebot' from '/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/__init__.py'>
+
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/plugin/load.py", line 42, in load_plugin
+    return manager.load_plugin(module_path)
+           │       │           └ 'YetAnotherPicSearch'
+           │       └ <function PluginManager.load_plugin at 0x1027f6290>
+           └ PluginManager(available_plugins={'YetAnotherPicSearch': 'YetAnotherPicSearch'})
+> File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/plugin/manager.py", line 169, in load_plugin
+    module = importlib.import_module(self._third_party_plugin_ids[name])
+             │         │             │    │                       └ 'YetAnotherPicSearch'
+             │         │             │    └ {'YetAnotherPicSearch': 'YetAnotherPicSearch'}
+             │         │             └ PluginManager(available_plugins={'YetAnotherPicSearch': 'YetAnotherPicSearch'})
+             │         └ <function import_module at 0x100f5c4c0>
+             └ <module 'importlib' from '/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/importlib/__init__.py'>
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           │          │           │    │        │        └ 0
+           │          │           │    │        └ None
+           │          │           │    └ 0
+           │          │           └ 'YetAnotherPicSearch'
+           │          └ <function _gcd_import at 0x100e13400>
+           └ <module '_frozen_importlib' (frozen)>
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+
+ModuleNotFoundError: No module named 'YetAnotherPicSearch'
+2025-02-06 03:30:53.101 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_waiter"
+2025-02-06 03:30:53.118 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_alconna:uniseg" from "nonebot_plugin_alconna.uniseg"
+2025-02-06 03:30:53.137 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_alconna"
+2025-02-06 03:30:53.139 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_localstore"
+2025-02-06 03:30:53.147 | DEBUG    | nonebot_plugin_deepseek:<module>:169 - load deepseek model: ['deepseek-chat', 'deepseek-reasoner']
+2025-02-06 03:30:53.172 | DEBUG    | nonebot_plugin_deepseek:decorator:85 - Succeeded to load function "get_web_content"
+2025-02-06 03:30:53.173 | TRACE    | nonebot:log:336 - Plugin-Alconna | Define new matcher AlconnaMatcher(type='', module=nonebot_plugin_deepseek, lineno=70)
+2025-02-06 03:30:53.174 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_deepseek"
+2025-02-06 03:30:53.176 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=13)
+2025-02-06 03:30:53.176 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=23)
+2025-02-06 03:30:53.176 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=32)
+2025-02-06 03:30:53.176 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=41)
+2025-02-06 03:30:53.176 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=55)
+2025-02-06 03:30:53.176 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=63)
+2025-02-06 03:30:53.176 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "photo" from "plugins.example.photo"
+2025-02-06 03:30:53.177 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.download, lineno=16)
+2025-02-06 03:30:53.177 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "download" from "plugins.example.download"
+2025-02-06 03:30:53.178 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.mention, lineno=16)
+2025-02-06 03:30:53.178 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "mention" from "plugins.example.mention"
+2025-02-06 03:30:53.178 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=9)
+2025-02-06 03:30:53.178 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=14)
+2025-02-06 03:30:53.178 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=19)
+2025-02-06 03:30:53.179 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=27)
+2025-02-06 03:30:53.179 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=35)
+2025-02-06 03:30:53.179 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=40)
+2025-02-06 03:30:53.179 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "sendxxx" from "plugins.example.sendxxx"
+2025-02-06 03:30:53.180 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.reply, lineno=9)
+2025-02-06 03:30:53.180 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "reply" from "plugins.example.reply"
+2025-02-06 03:30:53.180 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.hello, lineno=6)
+2025-02-06 03:30:53.180 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "hello" from "plugins.example.hello"
+2025-02-06 03:30:53.181 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='inline', module=plugins.example.inline, lineno=16)
+2025-02-06 03:30:53.181 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='inline', module=plugins.example.inline, lineno=54)
+2025-02-06 03:30:53.181 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "inline" from "plugins.example.inline"
+2025-02-06 03:30:53.181 | WARNING  | __main__:<module>:19 - Always use `nb run` to start the bot instead of manually running!
+2025-02-06 03:30:53.181 | SUCCESS  | nonebot:run:336 - Running NoneBot...
+2025-02-06 03:30:53.181 | SUCCESS  | nonebot:run:117 - Loaded adapters: Telegram
+2025-02-06 03:30:53.606 | INFO     | uvicorn:_serve:83 - Started server process [6869]
+2025-02-06 03:30:53.606 | INFO     | uvicorn:startup:48 - Waiting for application startup.
+2025-02-06 03:30:53.696 | ERROR    | uvicorn:send:121 - Traceback (most recent call last):
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/starlette/routing.py", line 693, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/contextlib.py", line 199, in __aenter__
+    return await anext(self.gen)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/drivers/fastapi.py", line 154, in _lifespan_manager
+    await self._lifespan.startup()
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/internal/driver/_lifespan.py", line 66, in startup
+    await self._run_lifespan_func(self._startup_funcs)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/internal/driver/_lifespan.py", line 55, in _run_lifespan_func
+    await cast(ASYNC_LIFESPAN_FUNC, func)()
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot_plugin_deepseek/hook.py", line 12, in _
+    command_manager.load_cache(cach_dir)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/arclet/alconna/manager.py", line 79, in load_shortcuts
+    with shelve.open(path.resolve().as_posix()) as db:
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/shelve.py", line 243, in open
+    return DbfilenameShelf(filename, flag, protocol, writeback)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/shelve.py", line 227, in __init__
+    Shelf.__init__(self, dbm.open(filename, flag), protocol, writeback)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/dbm/__init__.py", line 89, in open
+    raise error[0]("db type could not be determined")
+dbm.error: db type could not be determined
+
+2025-02-06 03:30:53.697 | ERROR    | uvicorn:startup:59 - Application startup failed. Exiting.
+2025-02-06 03:32:28.996 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_logpile"
+2025-02-06 03:32:28.996 | ERROR    | nonebot:load_plugin:198 - Failed to import "YetAnotherPicSearch"
+Traceback (most recent call last):
+
+  File "/Users/sean/workspace/testbot_tg/bot.py", line 14, in <module>
+    nonebot.load_plugin("YetAnotherPicSearch")
+    │       └ <function load_plugin at 0x10667c160>
+    └ <module 'nonebot' from '/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/__init__.py'>
+
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/plugin/load.py", line 42, in load_plugin
+    return manager.load_plugin(module_path)
+           │       │           └ 'YetAnotherPicSearch'
+           │       └ <function PluginManager.load_plugin at 0x1064ea320>
+           └ PluginManager(available_plugins={'YetAnotherPicSearch': 'YetAnotherPicSearch'})
+> File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/plugin/manager.py", line 169, in load_plugin
+    module = importlib.import_module(self._third_party_plugin_ids[name])
+             │         │             │    │                       └ 'YetAnotherPicSearch'
+             │         │             │    └ {'YetAnotherPicSearch': 'YetAnotherPicSearch'}
+             │         │             └ PluginManager(available_plugins={'YetAnotherPicSearch': 'YetAnotherPicSearch'})
+             │         └ <function import_module at 0x104c98550>
+             └ <module 'importlib' from '/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/importlib/__init__.py'>
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           │          │           │    │        │        └ 0
+           │          │           │    │        └ None
+           │          │           │    └ 0
+           │          │           └ 'YetAnotherPicSearch'
+           │          └ <function _gcd_import at 0x104af7400>
+           └ <module '_frozen_importlib' (frozen)>
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+
+ModuleNotFoundError: No module named 'YetAnotherPicSearch'
+2025-02-06 03:32:29.001 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.reply, lineno=9)
+2025-02-06 03:32:29.001 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "reply" from "plugins.example.reply"
+2025-02-06 03:32:29.002 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='inline', module=plugins.example.inline, lineno=16)
+2025-02-06 03:32:29.002 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='inline', module=plugins.example.inline, lineno=54)
+2025-02-06 03:32:29.002 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "inline" from "plugins.example.inline"
+2025-02-06 03:32:29.002 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=13)
+2025-02-06 03:32:29.003 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=23)
+2025-02-06 03:32:29.003 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=32)
+2025-02-06 03:32:29.003 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=41)
+2025-02-06 03:32:29.003 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=55)
+2025-02-06 03:32:29.003 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=63)
+2025-02-06 03:32:29.004 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "photo" from "plugins.example.photo"
+2025-02-06 03:32:29.004 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.mention, lineno=16)
+2025-02-06 03:32:29.004 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "mention" from "plugins.example.mention"
+2025-02-06 03:32:29.005 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.download, lineno=16)
+2025-02-06 03:32:29.005 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "download" from "plugins.example.download"
+2025-02-06 03:32:29.006 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.hello, lineno=6)
+2025-02-06 03:32:29.006 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "hello" from "plugins.example.hello"
+2025-02-06 03:32:29.007 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=9)
+2025-02-06 03:32:29.007 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=14)
+2025-02-06 03:32:29.007 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=19)
+2025-02-06 03:32:29.007 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=27)
+2025-02-06 03:32:29.008 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=35)
+2025-02-06 03:32:29.008 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=40)
+2025-02-06 03:32:29.008 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "sendxxx" from "plugins.example.sendxxx"
+2025-02-06 03:32:29.008 | WARNING  | __main__:<module>:19 - Always use `nb run` to start the bot instead of manually running!
+2025-02-06 03:32:29.008 | SUCCESS  | nonebot:run:336 - Running NoneBot...
+2025-02-06 03:32:29.008 | SUCCESS  | nonebot:run:117 - Loaded adapters: Telegram
+2025-02-06 03:32:29.019 | INFO     | uvicorn:_serve:83 - Started server process [7010]
+2025-02-06 03:32:29.019 | INFO     | uvicorn:startup:48 - Waiting for application startup.
+2025-02-06 03:32:29.021 | DEBUG    | nonebot:log:336 - Telegram | Calling API getMe
+2025-02-06 03:32:29.021 | DEBUG    | nonebot:log:336 - Telegram | Calling API {}
+2025-02-06 03:32:29.046 | INFO     | uvicorn:startup:62 - Application startup complete.
+2025-02-06 03:32:29.047 | INFO     | uvicorn:_log_started_message:215 - Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+2025-02-06 03:32:29.422 | INFO     | nonebot:log:336 - Telegram | Delete old webhook
+2025-02-06 03:32:29.424 | DEBUG    | nonebot:log:336 - Telegram | Calling API deleteWebhook
+2025-02-06 03:32:29.424 | DEBUG    | nonebot:log:336 - Telegram | Calling API {}
+2025-02-06 03:32:29.799 | INFO     | nonebot:log:336 - Telegram | Start poll
+2025-02-06 03:32:29.817 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:32:29.817 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:33:00.190 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:33:00.190 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:33:30.793 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 03:33:30.793 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 03:33:35.930 | INFO     | uvicorn:shutdown:263 - Shutting down
+2025-02-06 03:33:36.033 | INFO     | uvicorn:shutdown:67 - Waiting for application shutdown.
+2025-02-06 03:33:36.041 | INFO     | uvicorn:shutdown:76 - Application shutdown complete.
+2025-02-06 03:35:50.038 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_logpile"
+2025-02-06 03:35:50.038 | ERROR    | nonebot:load_plugin:198 - Failed to import "YetAnotherPicSearch"
+Traceback (most recent call last):
+
+  File "/Users/sean/workspace/testbot_tg/bot.py", line 14, in <module>
+    nonebot.load_plugin("YetAnotherPicSearch")
+    │       └ <function load_plugin at 0x1026140d0>
+    └ <module 'nonebot' from '/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/__init__.py'>
+
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/plugin/load.py", line 42, in load_plugin
+    return manager.load_plugin(module_path)
+           │       │           └ 'YetAnotherPicSearch'
+           │       └ <function PluginManager.load_plugin at 0x102486290>
+           └ PluginManager(available_plugins={'YetAnotherPicSearch': 'YetAnotherPicSearch'})
+> File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/plugin/manager.py", line 169, in load_plugin
+    module = importlib.import_module(self._third_party_plugin_ids[name])
+             │         │             │    │                       └ 'YetAnotherPicSearch'
+             │         │             │    └ {'YetAnotherPicSearch': 'YetAnotherPicSearch'}
+             │         │             └ PluginManager(available_plugins={'YetAnotherPicSearch': 'YetAnotherPicSearch'})
+             │         └ <function import_module at 0x100bec4c0>
+             └ <module 'importlib' from '/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/importlib/__init__.py'>
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           │          │           │    │        │        └ 0
+           │          │           │    │        └ None
+           │          │           │    └ 0
+           │          │           └ 'YetAnotherPicSearch'
+           │          └ <function _gcd_import at 0x100a9b400>
+           └ <module '_frozen_importlib' (frozen)>
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+
+ModuleNotFoundError: No module named 'YetAnotherPicSearch'
+2025-02-06 03:35:50.043 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_waiter"
+2025-02-06 03:35:50.060 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_alconna:uniseg" from "nonebot_plugin_alconna.uniseg"
+2025-02-06 03:35:50.079 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_alconna"
+2025-02-06 03:35:50.081 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_localstore"
+2025-02-06 03:35:50.089 | DEBUG    | nonebot_plugin_deepseek:<module>:169 - load deepseek model: ['deepseek-chat', 'deepseek-reasoner']
+2025-02-06 03:35:50.437 | DEBUG    | nonebot_plugin_deepseek:decorator:85 - Succeeded to load function "get_web_content"
+2025-02-06 03:35:50.439 | TRACE    | nonebot:log:336 - Plugin-Alconna | Define new matcher AlconnaMatcher(type='', module=nonebot_plugin_deepseek, lineno=70)
+2025-02-06 03:35:50.441 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_deepseek"
+2025-02-06 03:35:50.447 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='inline', module=plugins.example.inline, lineno=16)
+2025-02-06 03:35:50.447 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='inline', module=plugins.example.inline, lineno=54)
+2025-02-06 03:35:50.447 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "inline" from "plugins.example.inline"
+2025-02-06 03:35:50.448 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=13)
+2025-02-06 03:35:50.449 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=23)
+2025-02-06 03:35:50.449 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=32)
+2025-02-06 03:35:50.450 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=41)
+2025-02-06 03:35:50.450 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=55)
+2025-02-06 03:35:50.450 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=63)
+2025-02-06 03:35:50.451 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "photo" from "plugins.example.photo"
+2025-02-06 03:35:50.452 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.reply, lineno=9)
+2025-02-06 03:35:50.452 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "reply" from "plugins.example.reply"
+2025-02-06 03:35:50.453 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=9)
+2025-02-06 03:35:50.453 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=14)
+2025-02-06 03:35:50.454 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=19)
+2025-02-06 03:35:50.454 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=27)
+2025-02-06 03:35:50.454 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=35)
+2025-02-06 03:35:50.455 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=40)
+2025-02-06 03:35:50.455 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "sendxxx" from "plugins.example.sendxxx"
+2025-02-06 03:35:50.456 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.mention, lineno=16)
+2025-02-06 03:35:50.456 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "mention" from "plugins.example.mention"
+2025-02-06 03:35:50.457 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.download, lineno=16)
+2025-02-06 03:35:50.457 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "download" from "plugins.example.download"
+2025-02-06 03:35:50.457 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.hello, lineno=6)
+2025-02-06 03:35:50.458 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "hello" from "plugins.example.hello"
+2025-02-06 03:35:50.458 | WARNING  | __main__:<module>:19 - Always use `nb run` to start the bot instead of manually running!
+2025-02-06 03:35:50.458 | SUCCESS  | nonebot:run:336 - Running NoneBot...
+2025-02-06 03:35:50.458 | SUCCESS  | nonebot:run:117 - Loaded adapters: Telegram
+2025-02-06 03:35:50.503 | INFO     | uvicorn:_serve:83 - Started server process [7228]
+2025-02-06 03:35:50.503 | INFO     | uvicorn:startup:48 - Waiting for application startup.
+2025-02-06 03:35:50.506 | ERROR    | uvicorn:send:121 - Traceback (most recent call last):
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/starlette/routing.py", line 693, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/contextlib.py", line 199, in __aenter__
+    return await anext(self.gen)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/drivers/fastapi.py", line 154, in _lifespan_manager
+    await self._lifespan.startup()
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/internal/driver/_lifespan.py", line 66, in startup
+    await self._run_lifespan_func(self._startup_funcs)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/internal/driver/_lifespan.py", line 55, in _run_lifespan_func
+    await cast(ASYNC_LIFESPAN_FUNC, func)()
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot_plugin_deepseek/hook.py", line 12, in _
+    command_manager.load_cache(cach_dir)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/arclet/alconna/manager.py", line 79, in load_shortcuts
+    with shelve.open(path.resolve().as_posix()) as db:
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/shelve.py", line 243, in open
+    return DbfilenameShelf(filename, flag, protocol, writeback)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/shelve.py", line 227, in __init__
+    Shelf.__init__(self, dbm.open(filename, flag), protocol, writeback)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/dbm/__init__.py", line 89, in open
+    raise error[0]("db type could not be determined")
+dbm.error: db type could not be determined
+
+2025-02-06 03:35:50.507 | ERROR    | uvicorn:startup:59 - Application startup failed. Exiting.
+2025-02-06 03:36:35.322 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_logpile"
+2025-02-06 03:36:35.322 | ERROR    | nonebot:load_plugin:198 - Failed to import "YetAnotherPicSearch"
+Traceback (most recent call last):
+
+  File "/Users/sean/workspace/testbot_tg/bot.py", line 14, in <module>
+    nonebot.load_plugin("YetAnotherPicSearch")
+    │       └ <function load_plugin at 0x1024d00d0>
+    └ <module 'nonebot' from '/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/__init__.py'>
+
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/plugin/load.py", line 42, in load_plugin
+    return manager.load_plugin(module_path)
+           │       │           └ 'YetAnotherPicSearch'
+           │       └ <function PluginManager.load_plugin at 0x102342290>
+           └ PluginManager(available_plugins={'YetAnotherPicSearch': 'YetAnotherPicSearch'})
+> File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/plugin/manager.py", line 169, in load_plugin
+    module = importlib.import_module(self._third_party_plugin_ids[name])
+             │         │             │    │                       └ 'YetAnotherPicSearch'
+             │         │             │    └ {'YetAnotherPicSearch': 'YetAnotherPicSearch'}
+             │         │             └ PluginManager(available_plugins={'YetAnotherPicSearch': 'YetAnotherPicSearch'})
+             │         └ <function import_module at 0x100aa84c0>
+             └ <module 'importlib' from '/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/importlib/__init__.py'>
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           │          │           │    │        │        └ 0
+           │          │           │    │        └ None
+           │          │           │    └ 0
+           │          │           └ 'YetAnotherPicSearch'
+           │          └ <function _gcd_import at 0x100957400>
+           └ <module '_frozen_importlib' (frozen)>
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+
+ModuleNotFoundError: No module named 'YetAnotherPicSearch'
+2025-02-06 03:36:35.326 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_waiter"
+2025-02-06 03:36:35.343 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_alconna:uniseg" from "nonebot_plugin_alconna.uniseg"
+2025-02-06 03:36:35.362 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_alconna"
+2025-02-06 03:36:35.364 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_localstore"
+2025-02-06 03:36:35.371 | DEBUG    | nonebot_plugin_deepseek:<module>:169 - load deepseek model: ['deepseek-chat', 'deepseek-reasoner']
+2025-02-06 03:36:35.405 | DEBUG    | nonebot_plugin_deepseek:decorator:85 - Succeeded to load function "get_web_content"
+2025-02-06 03:36:35.406 | TRACE    | nonebot:log:336 - Plugin-Alconna | Define new matcher AlconnaMatcher(type='', module=nonebot_plugin_deepseek, lineno=70)
+2025-02-06 03:36:35.407 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_deepseek"
+2025-02-06 03:36:35.409 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.hello, lineno=6)
+2025-02-06 03:36:35.409 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "hello" from "plugins.example.hello"
+2025-02-06 03:36:35.410 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=13)
+2025-02-06 03:36:35.410 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=23)
+2025-02-06 03:36:35.410 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=32)
+2025-02-06 03:36:35.410 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=41)
+2025-02-06 03:36:35.411 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=55)
+2025-02-06 03:36:35.411 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=63)
+2025-02-06 03:36:35.411 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "photo" from "plugins.example.photo"
+2025-02-06 03:36:35.411 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='inline', module=plugins.example.inline, lineno=16)
+2025-02-06 03:36:35.412 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='inline', module=plugins.example.inline, lineno=54)
+2025-02-06 03:36:35.412 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "inline" from "plugins.example.inline"
+2025-02-06 03:36:35.412 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=9)
+2025-02-06 03:36:35.412 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=14)
+2025-02-06 03:36:35.412 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=19)
+2025-02-06 03:36:35.413 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=27)
+2025-02-06 03:36:35.413 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=35)
+2025-02-06 03:36:35.413 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=40)
+2025-02-06 03:36:35.413 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "sendxxx" from "plugins.example.sendxxx"
+2025-02-06 03:36:35.414 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.download, lineno=16)
+2025-02-06 03:36:35.414 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "download" from "plugins.example.download"
+2025-02-06 03:36:35.414 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.reply, lineno=9)
+2025-02-06 03:36:35.414 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "reply" from "plugins.example.reply"
+2025-02-06 03:36:35.415 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.mention, lineno=16)
+2025-02-06 03:36:35.415 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "mention" from "plugins.example.mention"
+2025-02-06 03:36:35.415 | WARNING  | __main__:<module>:19 - Always use `nb run` to start the bot instead of manually running!
+2025-02-06 03:36:35.415 | SUCCESS  | nonebot:run:336 - Running NoneBot...
+2025-02-06 03:36:35.415 | SUCCESS  | nonebot:run:117 - Loaded adapters: Telegram
+2025-02-06 03:36:35.451 | INFO     | uvicorn:_serve:83 - Started server process [7316]
+2025-02-06 03:36:35.452 | INFO     | uvicorn:startup:48 - Waiting for application startup.
+2025-02-06 03:36:35.454 | ERROR    | uvicorn:send:121 - Traceback (most recent call last):
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/starlette/routing.py", line 693, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/contextlib.py", line 199, in __aenter__
+    return await anext(self.gen)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/drivers/fastapi.py", line 154, in _lifespan_manager
+    await self._lifespan.startup()
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/internal/driver/_lifespan.py", line 66, in startup
+    await self._run_lifespan_func(self._startup_funcs)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/internal/driver/_lifespan.py", line 55, in _run_lifespan_func
+    await cast(ASYNC_LIFESPAN_FUNC, func)()
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot_plugin_deepseek/hook.py", line 12, in _
+    command_manager.load_cache(cach_dir)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/arclet/alconna/manager.py", line 79, in load_shortcuts
+    with shelve.open(path.resolve().as_posix()) as db:
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/shelve.py", line 243, in open
+    return DbfilenameShelf(filename, flag, protocol, writeback)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/shelve.py", line 227, in __init__
+    Shelf.__init__(self, dbm.open(filename, flag), protocol, writeback)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/dbm/__init__.py", line 89, in open
+    raise error[0]("db type could not be determined")
+dbm.error: db type could not be determined
+
+2025-02-06 03:36:35.455 | ERROR    | uvicorn:startup:59 - Application startup failed. Exiting.
+2025-02-06 03:37:32.037 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_logpile"
+2025-02-06 03:37:32.039 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_waiter"
+2025-02-06 03:37:32.055 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_alconna:uniseg" from "nonebot_plugin_alconna.uniseg"
+2025-02-06 03:37:32.073 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_alconna"
+2025-02-06 03:37:32.163 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=YetAnotherPicSearch.__main__, lineno=330)
+2025-02-06 03:37:32.164 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=YetAnotherPicSearch.__main__, lineno=333)
+2025-02-06 03:37:32.165 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "YetAnotherPicSearch"
+2025-02-06 03:37:32.168 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_localstore"
+2025-02-06 03:37:32.172 | DEBUG    | nonebot_plugin_deepseek:<module>:169 - load deepseek model: ['deepseek-chat', 'deepseek-reasoner']
+2025-02-06 03:37:32.224 | DEBUG    | nonebot_plugin_deepseek:decorator:85 - Succeeded to load function "get_web_content"
+2025-02-06 03:37:32.225 | TRACE    | nonebot:log:336 - Plugin-Alconna | Define new matcher AlconnaMatcher(type='', module=nonebot_plugin_deepseek, lineno=70)
+2025-02-06 03:37:32.226 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_deepseek"
+2025-02-06 03:37:32.229 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.download, lineno=16)
+2025-02-06 03:37:32.229 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "download" from "plugins.example.download"
+2025-02-06 03:37:32.229 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.reply, lineno=9)
+2025-02-06 03:37:32.229 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "reply" from "plugins.example.reply"
+2025-02-06 03:37:32.230 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='inline', module=plugins.example.inline, lineno=16)
+2025-02-06 03:37:32.230 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='inline', module=plugins.example.inline, lineno=54)
+2025-02-06 03:37:32.230 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "inline" from "plugins.example.inline"
+2025-02-06 03:37:32.230 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=13)
+2025-02-06 03:37:32.231 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=23)
+2025-02-06 03:37:32.231 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=32)
+2025-02-06 03:37:32.231 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=41)
+2025-02-06 03:37:32.231 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=55)
+2025-02-06 03:37:32.231 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=63)
+2025-02-06 03:37:32.231 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "photo" from "plugins.example.photo"
+2025-02-06 03:37:32.232 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.mention, lineno=16)
+2025-02-06 03:37:32.232 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "mention" from "plugins.example.mention"
+2025-02-06 03:37:32.233 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=9)
+2025-02-06 03:37:32.233 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=14)
+2025-02-06 03:37:32.233 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=19)
+2025-02-06 03:37:32.233 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=27)
+2025-02-06 03:37:32.233 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=35)
+2025-02-06 03:37:32.233 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=40)
+2025-02-06 03:37:32.233 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "sendxxx" from "plugins.example.sendxxx"
+2025-02-06 03:37:32.234 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.hello, lineno=6)
+2025-02-06 03:37:32.234 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "hello" from "plugins.example.hello"
+2025-02-06 03:37:32.234 | WARNING  | __main__:<module>:19 - Always use `nb run` to start the bot instead of manually running!
+2025-02-06 03:37:32.234 | SUCCESS  | nonebot:run:336 - Running NoneBot...
+2025-02-06 03:37:32.234 | SUCCESS  | nonebot:run:117 - Loaded adapters: Telegram
+2025-02-06 03:37:32.243 | INFO     | uvicorn:_serve:83 - Started server process [7387]
+2025-02-06 03:37:32.243 | INFO     | uvicorn:startup:48 - Waiting for application startup.
+2025-02-06 03:37:32.246 | ERROR    | uvicorn:send:121 - Traceback (most recent call last):
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/starlette/routing.py", line 693, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/contextlib.py", line 199, in __aenter__
+    return await anext(self.gen)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/drivers/fastapi.py", line 154, in _lifespan_manager
+    await self._lifespan.startup()
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/internal/driver/_lifespan.py", line 66, in startup
+    await self._run_lifespan_func(self._startup_funcs)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/internal/driver/_lifespan.py", line 55, in _run_lifespan_func
+    await cast(ASYNC_LIFESPAN_FUNC, func)()
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot_plugin_deepseek/hook.py", line 12, in _
+    command_manager.load_cache(cach_dir)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/arclet/alconna/manager.py", line 79, in load_shortcuts
+    with shelve.open(path.resolve().as_posix()) as db:
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/shelve.py", line 243, in open
+    return DbfilenameShelf(filename, flag, protocol, writeback)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/shelve.py", line 227, in __init__
+    Shelf.__init__(self, dbm.open(filename, flag), protocol, writeback)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/dbm/__init__.py", line 89, in open
+    raise error[0]("db type could not be determined")
+dbm.error: db type could not be determined
+
+2025-02-06 03:37:32.246 | ERROR    | uvicorn:startup:59 - Application startup failed. Exiting.
+2025-02-06 03:39:10.210 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_logpile"
+2025-02-06 03:39:10.213 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_waiter"
+2025-02-06 03:39:10.228 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_alconna:uniseg" from "nonebot_plugin_alconna.uniseg"
+2025-02-06 03:39:10.247 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_alconna"
+2025-02-06 03:39:10.306 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=YetAnotherPicSearch.__main__, lineno=330)
+2025-02-06 03:39:10.306 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=YetAnotherPicSearch.__main__, lineno=333)
+2025-02-06 03:39:10.307 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "YetAnotherPicSearch"
+2025-02-06 03:39:10.310 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_localstore"
+2025-02-06 03:39:10.314 | DEBUG    | nonebot_plugin_deepseek:<module>:169 - load deepseek model: ['deepseek-chat', 'deepseek-reasoner']
+2025-02-06 03:39:10.366 | DEBUG    | nonebot_plugin_deepseek:decorator:85 - Succeeded to load function "get_web_content"
+2025-02-06 03:39:10.367 | TRACE    | nonebot:log:336 - Plugin-Alconna | Define new matcher AlconnaMatcher(type='', module=nonebot_plugin_deepseek, lineno=70)
+2025-02-06 03:39:10.368 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_deepseek"
+2025-02-06 03:39:10.369 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.hello, lineno=6)
+2025-02-06 03:39:10.370 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "hello" from "plugins.example.hello"
+2025-02-06 03:39:10.370 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.download, lineno=16)
+2025-02-06 03:39:10.370 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "download" from "plugins.example.download"
+2025-02-06 03:39:10.371 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=9)
+2025-02-06 03:39:10.371 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=14)
+2025-02-06 03:39:10.371 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=19)
+2025-02-06 03:39:10.371 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=27)
+2025-02-06 03:39:10.371 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=35)
+2025-02-06 03:39:10.371 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=40)
+2025-02-06 03:39:10.372 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "sendxxx" from "plugins.example.sendxxx"
+2025-02-06 03:39:10.372 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=13)
+2025-02-06 03:39:10.372 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=23)
+2025-02-06 03:39:10.372 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=32)
+2025-02-06 03:39:10.373 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=41)
+2025-02-06 03:39:10.373 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=55)
+2025-02-06 03:39:10.373 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=63)
+2025-02-06 03:39:10.373 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "photo" from "plugins.example.photo"
+2025-02-06 03:39:10.374 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.reply, lineno=9)
+2025-02-06 03:39:10.374 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "reply" from "plugins.example.reply"
+2025-02-06 03:39:10.374 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.mention, lineno=16)
+2025-02-06 03:39:10.374 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "mention" from "plugins.example.mention"
+2025-02-06 03:39:10.375 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='inline', module=plugins.example.inline, lineno=16)
+2025-02-06 03:39:10.375 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='inline', module=plugins.example.inline, lineno=54)
+2025-02-06 03:39:10.375 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "inline" from "plugins.example.inline"
+2025-02-06 03:39:10.375 | WARNING  | __main__:<module>:19 - Always use `nb run` to start the bot instead of manually running!
+2025-02-06 03:39:10.375 | SUCCESS  | nonebot:run:336 - Running NoneBot...
+2025-02-06 03:39:10.375 | SUCCESS  | nonebot:run:117 - Loaded adapters: Telegram
+2025-02-06 03:39:10.383 | INFO     | uvicorn:_serve:83 - Started server process [7538]
+2025-02-06 03:39:10.384 | INFO     | uvicorn:startup:48 - Waiting for application startup.
+2025-02-06 03:39:10.386 | ERROR    | uvicorn:send:121 - Traceback (most recent call last):
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/starlette/routing.py", line 693, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/contextlib.py", line 199, in __aenter__
+    return await anext(self.gen)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/drivers/fastapi.py", line 154, in _lifespan_manager
+    await self._lifespan.startup()
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/internal/driver/_lifespan.py", line 66, in startup
+    await self._run_lifespan_func(self._startup_funcs)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/internal/driver/_lifespan.py", line 55, in _run_lifespan_func
+    await cast(ASYNC_LIFESPAN_FUNC, func)()
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot_plugin_deepseek/hook.py", line 12, in _
+    command_manager.load_cache(cach_dir)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/arclet/alconna/manager.py", line 79, in load_shortcuts
+    with shelve.open(path.resolve().as_posix()) as db:
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/shelve.py", line 243, in open
+    return DbfilenameShelf(filename, flag, protocol, writeback)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/shelve.py", line 227, in __init__
+    Shelf.__init__(self, dbm.open(filename, flag), protocol, writeback)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/dbm/__init__.py", line 89, in open
+    raise error[0]("db type could not be determined")
+dbm.error: db type could not be determined
+
+2025-02-06 03:39:10.387 | ERROR    | uvicorn:startup:59 - Application startup failed. Exiting.
+2025-02-06 03:40:33.559 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_logpile"
+2025-02-06 03:40:33.561 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_waiter"
+2025-02-06 03:40:33.577 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_alconna:uniseg" from "nonebot_plugin_alconna.uniseg"
+2025-02-06 03:40:33.595 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_alconna"
+2025-02-06 03:40:33.656 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=YetAnotherPicSearch.__main__, lineno=330)
+2025-02-06 03:40:33.657 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=YetAnotherPicSearch.__main__, lineno=333)
+2025-02-06 03:40:33.658 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "YetAnotherPicSearch"
+2025-02-06 03:40:33.660 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_localstore"
+2025-02-06 03:40:33.664 | DEBUG    | nonebot_plugin_deepseek:<module>:169 - load deepseek model: ['deepseek-chat', 'deepseek-reasoner']
+2025-02-06 03:40:33.716 | DEBUG    | nonebot_plugin_deepseek:decorator:85 - Succeeded to load function "get_web_content"
+2025-02-06 03:40:33.717 | TRACE    | nonebot:log:336 - Plugin-Alconna | Define new matcher AlconnaMatcher(type='', module=nonebot_plugin_deepseek, lineno=70)
+2025-02-06 03:40:33.718 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_deepseek"
+2025-02-06 03:40:33.720 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='inline', module=plugins.example.inline, lineno=16)
+2025-02-06 03:40:33.720 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='inline', module=plugins.example.inline, lineno=54)
+2025-02-06 03:40:33.720 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "inline" from "plugins.example.inline"
+2025-02-06 03:40:33.720 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.download, lineno=16)
+2025-02-06 03:40:33.720 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "download" from "plugins.example.download"
+2025-02-06 03:40:33.721 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=9)
+2025-02-06 03:40:33.721 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=14)
+2025-02-06 03:40:33.721 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=19)
+2025-02-06 03:40:33.721 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=27)
+2025-02-06 03:40:33.722 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=35)
+2025-02-06 03:40:33.722 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=40)
+2025-02-06 03:40:33.722 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "sendxxx" from "plugins.example.sendxxx"
+2025-02-06 03:40:33.722 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=13)
+2025-02-06 03:40:33.723 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=23)
+2025-02-06 03:40:33.723 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=32)
+2025-02-06 03:40:33.723 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=41)
+2025-02-06 03:40:33.723 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=55)
+2025-02-06 03:40:33.723 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=63)
+2025-02-06 03:40:33.723 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "photo" from "plugins.example.photo"
+2025-02-06 03:40:33.724 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.mention, lineno=16)
+2025-02-06 03:40:33.724 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "mention" from "plugins.example.mention"
+2025-02-06 03:40:33.724 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.hello, lineno=6)
+2025-02-06 03:40:33.724 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "hello" from "plugins.example.hello"
+2025-02-06 03:40:33.725 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.reply, lineno=9)
+2025-02-06 03:40:33.725 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "reply" from "plugins.example.reply"
+2025-02-06 03:40:33.725 | WARNING  | __main__:<module>:19 - Always use `nb run` to start the bot instead of manually running!
+2025-02-06 03:40:33.725 | SUCCESS  | nonebot:run:336 - Running NoneBot...
+2025-02-06 03:40:33.725 | SUCCESS  | nonebot:run:117 - Loaded adapters: Telegram
+2025-02-06 03:40:33.734 | INFO     | uvicorn:_serve:83 - Started server process [7665]
+2025-02-06 03:40:33.734 | INFO     | uvicorn:startup:48 - Waiting for application startup.
+2025-02-06 03:40:33.737 | ERROR    | uvicorn:send:121 - Traceback (most recent call last):
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/starlette/routing.py", line 693, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/contextlib.py", line 199, in __aenter__
+    return await anext(self.gen)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/drivers/fastapi.py", line 154, in _lifespan_manager
+    await self._lifespan.startup()
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/internal/driver/_lifespan.py", line 66, in startup
+    await self._run_lifespan_func(self._startup_funcs)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot/internal/driver/_lifespan.py", line 55, in _run_lifespan_func
+    await cast(ASYNC_LIFESPAN_FUNC, func)()
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/nonebot_plugin_deepseek/hook.py", line 12, in _
+    command_manager.load_cache(cach_dir)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/site-packages/arclet/alconna/manager.py", line 79, in load_shortcuts
+    with shelve.open(path.resolve().as_posix()) as db:
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/shelve.py", line 243, in open
+    return DbfilenameShelf(filename, flag, protocol, writeback)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/shelve.py", line 227, in __init__
+    Shelf.__init__(self, dbm.open(filename, flag), protocol, writeback)
+  File "/Users/sean/workspace/testbot_tg/.venv/lib/python3.10/dbm/__init__.py", line 89, in open
+    raise error[0]("db type could not be determined")
+dbm.error: db type could not be determined
+
+2025-02-06 03:40:33.737 | ERROR    | uvicorn:startup:59 - Application startup failed. Exiting.

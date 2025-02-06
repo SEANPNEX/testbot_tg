@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: nonebot_plugin_withdraw
+Version: 0.4.1
+Summary: A simple withdraw plugin for Nonebot2
+Home-page: https://github.com/noneplugin/nonebot-plugin-withdraw
+License: MIT
+Author: meetwq
+Author-email: meetwq@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: nonebot-plugin-alconna (>=0.51.4)
+Requires-Dist: nonebot-plugin-uninfo (>=0.4.0,<1.0.0)
+Requires-Dist: nonebot2 (>=2.3.0,<3.0.0)
+Project-URL: Repository, https://github.com/noneplugin/nonebot-plugin-withdraw
+Description-Content-Type: text/markdown
+
+# nonebot-plugin-withdraw
+
+基于 [nonebot2](https://github.com/nonebot/nonebot2) 的简单撤回插件，让机器人撤回 **自己发出的消息**
+
+使用场景是如果机器人发出了不和谐的消息，群友可以帮忙及时撤回
+
+### 使用
+
+**以下命令需要加[命令前缀](https://v2.nonebot.dev/docs/api/config#Config-command_start) (默认为`/`)，可自行设置为空**
+
+#### 方式1：
+
+@机器人 撤回 [num]
+
+`num` 指机器人发的倒数第几条消息，从 `0` 开始，默认为 `0`，如：
+
+```
+@机器人 撤回    # 撤回倒数第一条消息
+@机器人 撤回 1    # 撤回倒数第二条消息
+```
+
+#### 方式2：
+
+回复需要撤回的消息，回复“撤回”（部分适配器不支持）
+
+### 支持的 adapter
+
+- [x] OneBot v11
+- [x] OneBot v12
+- [x] Kaiheila
+- [x] Telegram
+- [x] Feishu
+- [x] Discord
+- [x] QQ
+- [x] Satori
+- [x] DoDo
+
