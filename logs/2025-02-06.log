@@ -8885,3 +8885,57 @@ RuntimeError: Browser.close: unable to perform operation on <WriteUnixTransport 
 2025-02-06 19:08:29.176 | INFO     | uvicorn:shutdown:263 - Shutting down
 2025-02-06 19:08:29.279 | INFO     | uvicorn:shutdown:67 - Waiting for application shutdown.
 2025-02-06 19:08:29.288 | DEBUG    | nonebot_plugin_deepseek:_:19 - DeekSeek shortcuts cache dumped
+2025-02-06 19:20:07.800 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_logpile"
+2025-02-06 19:20:07.802 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_waiter"
+2025-02-06 19:20:07.818 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_alconna:uniseg" from "nonebot_plugin_alconna.uniseg"
+2025-02-06 19:20:07.834 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_alconna"
+2025-02-06 19:20:07.863 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=YetAnotherPicSearch.__main__, lineno=330)
+2025-02-06 19:20:07.863 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=YetAnotherPicSearch.__main__, lineno=333)
+2025-02-06 19:20:07.864 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "YetAnotherPicSearch"
+2025-02-06 19:20:07.866 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_localstore"
+2025-02-06 19:20:07.870 | DEBUG    | nonebot_plugin_deepseek:<module>:169 - load deepseek model: ['deepseek-chat', 'deepseek-reasoner']
+2025-02-06 19:20:07.892 | DEBUG    | nonebot_plugin_deepseek:decorator:85 - Succeeded to load function "get_web_content"
+2025-02-06 19:20:07.893 | TRACE    | nonebot:log:336 - Plugin-Alconna | Define new matcher AlconnaMatcher(type='', module=nonebot_plugin_deepseek, lineno=70)
+2025-02-06 19:20:07.894 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "nonebot_plugin_deepseek"
+2025-02-06 19:20:07.895 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.reply, lineno=9)
+2025-02-06 19:20:07.896 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "reply" from "plugins.example.reply"
+2025-02-06 19:20:07.896 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=13)
+2025-02-06 19:20:07.896 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=23)
+2025-02-06 19:20:07.896 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=32)
+2025-02-06 19:20:07.896 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=41)
+2025-02-06 19:20:07.897 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=55)
+2025-02-06 19:20:07.897 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.photo, lineno=63)
+2025-02-06 19:20:07.897 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "photo" from "plugins.example.photo"
+2025-02-06 19:20:07.897 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=9)
+2025-02-06 19:20:07.897 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=14)
+2025-02-06 19:20:07.898 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=19)
+2025-02-06 19:20:07.898 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=27)
+2025-02-06 19:20:07.898 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=35)
+2025-02-06 19:20:07.898 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.sendxxx, lineno=40)
+2025-02-06 19:20:07.898 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "sendxxx" from "plugins.example.sendxxx"
+2025-02-06 19:20:07.898 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.mention, lineno=16)
+2025-02-06 19:20:07.899 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "mention" from "plugins.example.mention"
+2025-02-06 19:20:07.899 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='inline', module=plugins.example.inline, lineno=16)
+2025-02-06 19:20:07.899 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='inline', module=plugins.example.inline, lineno=54)
+2025-02-06 19:20:07.899 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "inline" from "plugins.example.inline"
+2025-02-06 19:20:07.900 | TRACE    | nonebot:new:323 - Define new matcher Matcher(type='message', module=plugins.example.download, lineno=16)
+2025-02-06 19:20:07.900 | SUCCESS  | nonebot:load_plugin:188 - Succeeded to load plugin "download" from "plugins.example.download"
+2025-02-06 19:20:07.900 | WARNING  | __main__:<module>:22 - Always use `nb run` to start the bot instead of manually running!
+2025-02-06 19:20:07.900 | SUCCESS  | nonebot:run:336 - Running NoneBot...
+2025-02-06 19:20:07.900 | SUCCESS  | nonebot:run:117 - Loaded adapters: Telegram
+2025-02-06 19:20:07.909 | INFO     | uvicorn:_serve:83 - Started server process [4517]
+2025-02-06 19:20:07.909 | INFO     | uvicorn:startup:48 - Waiting for application startup.
+2025-02-06 19:20:07.913 | DEBUG    | nonebot_plugin_deepseek:_:13 - DeekSeek shortcuts cache loaded
+2025-02-06 19:20:07.913 | DEBUG    | nonebot:log:336 - Telegram | Calling API getMe
+2025-02-06 19:20:07.913 | DEBUG    | nonebot:log:336 - Telegram | Calling API {}
+2025-02-06 19:20:07.936 | INFO     | uvicorn:startup:62 - Application startup complete.
+2025-02-06 19:20:07.937 | INFO     | uvicorn:_log_started_message:215 - Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+2025-02-06 19:20:08.641 | INFO     | nonebot:log:336 - Telegram | Delete old webhook
+2025-02-06 19:20:08.643 | DEBUG    | nonebot:log:336 - Telegram | Calling API deleteWebhook
+2025-02-06 19:20:08.643 | DEBUG    | nonebot:log:336 - Telegram | Calling API {}
+2025-02-06 19:20:09.341 | INFO     | nonebot:log:336 - Telegram | Start poll
+2025-02-06 19:20:09.355 | DEBUG    | nonebot:log:336 - Telegram | Calling API getUpdates
+2025-02-06 19:20:09.355 | DEBUG    | nonebot:log:336 - Telegram | Calling API {'timeout': '30'}
+2025-02-06 19:20:16.950 | INFO     | uvicorn:shutdown:263 - Shutting down
+2025-02-06 19:20:17.052 | INFO     | uvicorn:shutdown:67 - Waiting for application shutdown.
+2025-02-06 19:20:17.060 | DEBUG    | nonebot_plugin_deepseek:_:19 - DeekSeek shortcuts cache dumped
