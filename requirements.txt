@@ -1,0 +1,7 @@
+nonebot2
+nonebot2[fastapi]
+nonebot-adapter-telegram
+nonebot-plugin-status
+nonebot-plugin-logpile
+YetAnotherPicSearch
+nonebot-plugin-deepseek
