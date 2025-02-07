@@ -1,3 +1,0 @@
-2025-02-02 21:22:30.972 | INFO     | uvicorn:shutdown:263 - Shutting down
-2025-02-02 21:22:31.081 | INFO     | uvicorn:shutdown:67 - Waiting for application shutdown.
-2025-02-02 21:22:31.091 | INFO     | uvicorn:shutdown:76 - Application shutdown complete.
