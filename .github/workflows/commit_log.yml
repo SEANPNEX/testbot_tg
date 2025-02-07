@@ -25,22 +25,6 @@ jobs:
           
           # Append to workflow.log
           echo "$LOG_ENTRY" >> workflow.log
-          
-          # If docpage/docs/workflow.md exists, rewrite it with the header and spaced content from workflow.log
-          if [ -f "docpage/docs/workflow.md" ]; then
-            {
-              echo "---"
-              echo "prev:"
-              echo "  text: \"Map\""
-              echo "  link: \"docs/map/map_docs.md\""
-              echo "---"
-              echo "# Workflow"
-              echo ""
-              
-              # Add blank line between each line in workflow.log
-              awk '{print $0 "\n"}' workflow.log
-            } > docpage/docs/workflow.md
-          fi
 
       - name: Commit and push log files
         run: |
