@@ -178,3 +178,7 @@ cython_debug/
 *.DS_Store
 .DS_Store
 logs/*
+
+# submodules
+adapter-telegram/*
+nonebot-plugin-deepseek/*

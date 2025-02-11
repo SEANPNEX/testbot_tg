@@ -10,10 +10,11 @@ driver.register_adapter(TelegramAdapter)
 
 nonebot.load_builtin_plugins("echo")
 nonebot.load_plugin("plugins.shutdown")
+nonebot.load_plugin("plugins.nonebot-plugin-deepseek.nonebot_plugin_deepseek")
 nonebot.load_plugin("nonebot_plugin_status")
 nonebot.load_plugin("nonebot_plugin_logpile")
 nonebot.load_plugin("YetAnotherPicSearch")
-nonebot.load_plugin("nonebot_plugin_deepseek")
+# nonebot.load_plugin("nonebot_plugin_deepseek")
 nonebot.load_plugins("plugins/example")
 
 print(driver.config)
