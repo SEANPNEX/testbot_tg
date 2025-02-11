@@ -180,5 +180,5 @@ cython_debug/
 logs/*
 
 # submodules
-adapter-telegram/*
-nonebot-plugin-deepseek/*
+adapter-telegram/
+nonebot-plugin-deepseek/
