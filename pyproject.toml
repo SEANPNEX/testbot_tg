@@ -4,12 +4,21 @@ version = "0.1.0"
 description = "testbot_tg"
 readme = "README.md"
 requires-python = ">=3.9, <4.0"
+dependencies = [
+    "pandas",
+    "numpy",
+    "scipy",
+    "requests",
+    "fintech-utils",
+    "nonebot-plugin-apscheduler",
+    "nonebot-plugin-waiter",
+]
 
 [tool.nonebot]
 adapters = [
     {name = "Telegram", module_name = "nonebot.adapters.telegram"}
     
 ]
-plugins = ["nonebot_plugin_status", "nonebot_plugin_logpile", "YetAnotherPicSearch", "nonebot_plugin_setu_now", "nonebot_plugin_picsetu", "nonebot_plugin_deepseek", "nonebot_plugin_marshoai"]
-plugin_dirs = []
+plugins = ["nonebot_plugin_status", "nonebot_plugin_logpile", "YetAnotherPicSearch", "nonebot_plugin_setu_now", "nonebot_plugin_picsetu", "nonebot_plugin_deepseek", "nonebot_plugin_marshoai", "nonebot_plugin_apscheduler", "nonebot_plugin_waiter"]
+plugin_dirs = ["plugins"]
 builtin_plugins = ["echo", "single_session"]

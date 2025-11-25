@@ -182,3 +182,6 @@ logs/*
 # submodules
 adapter-telegram/
 nonebot-plugin-deepseek/
+
+# data
+sp500_data/

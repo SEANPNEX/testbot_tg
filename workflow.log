@@ -6,4 +6,7 @@
 2025-02-08 09:15:01-SEANPNEX-test
 2025-02-11 10:20:29-SEANPNEX-removing env
 2025-02-11 10:33:40-SEANPNEX-removing submodule
+<<<<<<< HEAD
 2025-02-11 11:14:59-SEANPNEX-update ignore file
+=======
+>>>>>>> f163e3f9 (update stock monitor)
