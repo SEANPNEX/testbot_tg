@@ -42,6 +42,13 @@ class Portfolio:
     @latest_history.setter
     def latest_history(self, value: pd.DataFrame):
         self._latest_history = value
+    
+    def get_total_value(self):
+        if self.positions.empty:
+            return 0
+        else:
+            return self.positions['shares'] * self.positions['entry_price'].sum()
+        
 
     def access_latest_history(self):
         symbols = self.positions['symbol'].tolist() if not self.positions.empty else []
@@ -94,7 +101,7 @@ class Portfolio:
                 'entry_price': latest_price,
                 'strike_price': selected_option['strike'],
                 'premium': selected_option['bid'],
-                'expiry_date': selected_option['expiration_date'],
+                'expiry_date': selected_option['expiration'],
                 'iv': selected_option['implied_volatility'],
                 'risk_free': 0.0408,  # hardcoded for now
             }
@@ -118,16 +125,18 @@ class Portfolio:
         # convert to num
         option_chain['delta'] = pd.to_numeric(option_chain['delta'], errors='coerce')
         # convert to datetime
-        option_chain['expiration_date'] = pd.to_datetime(option_chain['expiration_date'], errors='coerce')
+        option_chain['expiration'] = pd.to_datetime(option_chain['expiration'], errors='coerce')
         # compute days to expiration
         target_delta_range = self.momentum_config.delta_range
         target_dtm_range = self.momentum_config.dtm_range
         today = datetime.datetime.now()
+        time_range_low = today - datetime.timedelta(days=target_dtm_range[0])
+        time_range_high = today + datetime.timedelta(days=target_dtm_range[1])
         mask = (
             (option_chain['delta'].abs() >= target_delta_range[0])
             & (option_chain['delta'].abs() <= target_delta_range[1])
-            & (option_chain['expiration'] >= target_dtm_range[0])
-            & (option_chain['expiration'] <= target_dtm_range[1])
+            & (option_chain['expiration'] >= time_range_low)
+            & (option_chain['expiration'] <= time_range_high)
         )
         filtered_options = option_chain[mask]
         if filtered_options.empty:

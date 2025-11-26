@@ -185,3 +185,6 @@ nonebot-plugin-deepseek/
 
 # data
 sp500_data/
+
+# user data
+portfolios/

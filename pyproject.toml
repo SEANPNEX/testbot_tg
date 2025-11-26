@@ -10,15 +10,33 @@ dependencies = [
     "scipy",
     "requests",
     "fintech-utils",
+    "nonebot2[fastapi]",
+    "nonebot-adapter-telegram",
+    "nonebot-plugin-status",
+    "nonebot-plugin-logpile",
+    "YetAnotherPicSearch",
+    "nonebot-plugin-deepseek",
     "nonebot-plugin-apscheduler",
     "nonebot-plugin-waiter",
+    "nonebot-plugin-setu-now",
+    "nonebot-plugin-picsetu",
+    "nonebot-plugin-marshoai",
 ]
 
 [tool.nonebot]
 adapters = [
     {name = "Telegram", module_name = "nonebot.adapters.telegram"}
-    
 ]
-plugins = ["nonebot_plugin_status", "nonebot_plugin_logpile", "YetAnotherPicSearch", "nonebot_plugin_setu_now", "nonebot_plugin_picsetu", "nonebot_plugin_deepseek", "nonebot_plugin_marshoai", "nonebot_plugin_apscheduler", "nonebot_plugin_waiter"]
+plugins = [
+    "nonebot_plugin_status",
+    "nonebot_plugin_logpile",
+    "YetAnotherPicSearch",
+    "nonebot_plugin_setu_now",
+    "nonebot_plugin_picsetu",
+    "nonebot_plugin_deepseek",
+    "nonebot_plugin_marshoai",
+    "nonebot_plugin_apscheduler",
+    "nonebot_plugin_waiter",
+]
 plugin_dirs = ["plugins"]
 builtin_plugins = ["echo", "single_session"]

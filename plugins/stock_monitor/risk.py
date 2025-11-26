@@ -35,6 +35,9 @@ class RiskAnalyzer():
     @staticmethod
     async def simulate_terminal_price_gbm(S0, mu, sigma, T, n_simulations=10000):
         Z = np.random.randn(n_simulations)
+        mu = float(mu)
+        sigma = float(sigma)
+        T = float(T)
         drift = (mu - 0.5 * sigma ** 2) * T
         diffusion = sigma * np.sqrt(T) * Z
         S_T = S0 * np.exp(drift + diffusion)
@@ -66,6 +69,10 @@ class RiskAnalyzer():
         total_losses = np.array(total_losses)
         VaR = np.percentile(total_losses, 100 * (1 - alpha))
         es = total_losses[total_losses >= VaR].mean()
+        # relative to portfolio value
+        portfolio_value = self.portfolio.get_total_value()
+        print("DEBUG: Relative ES: ", es / portfolio_value)
+        es = es / portfolio_value
         return es
     
     async def risk_attribution(self, alpha=0.05, n_simulations=10000, risk_free=0.0408):
@@ -127,6 +134,7 @@ class RiskAnalyzer():
     async def es_risk_warn(self, alpha=0.05, n_simulations=10000, risk_free=0.0408):
         es_threshold = self.momentum_config.es_target
         total_es = await self.get_es(alpha, n_simulations, risk_free)
+        print(es_threshold, total_es)
         if total_es >= es_threshold:
             warning = f"Alert: Expected Shortfall (ES) is ${total_es:,.2f}, which exceeds the threshold of ${es_threshold:,.2f}."
             adjusted_positions = await self.position_risk_adjustment(alpha, n_simulations, risk_free)
@@ -149,7 +157,7 @@ class RiskAnalyzer():
         # filter the positions for exit signals
         exit_signals = rel_signals[rel_signals < high]
         for symbol, rel_val in exit_signals.items():
-            warn = f"Alert: {symbol} has generated an exit signal with relative signal {rel_val:.2f}."
+            warn = f"EXIT: {symbol} has generated an exit signal with relative signal {rel_val:.2f}."
             if self.bot:
                 await self.bot.send_message(self.uid, warn)
             # calculate the budget freed

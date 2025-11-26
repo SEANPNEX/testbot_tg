@@ -94,6 +94,18 @@ async def scheduled_price_check():
             portfolio.bot = bots[0]
         await monitor_portfolios(portfolio)
 
+check_now = on_command("check_now", rule=to_me(), aliases={"cn"})
+
+@check_now.handle()
+async def _(bot: Bot, event: MessageEvent):
+    nonebot.logger.info("User requested immediate price check.")
+    uid = event.get_user_id()
+    portfolio = portfolios.get(uid)
+    if not portfolio:
+        await bot.send_message(chat_id=uid, text="Portfolio not found.")
+        return
+    await monitor_portfolios(portfolio)
+
 @scheduler.scheduled_job("cron", hour=18, minute=0)
 async def daily_es_report():
     bots = [b for b in driver.bots.values() if isinstance(b, Bot)]
