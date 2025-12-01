@@ -49,14 +49,14 @@ class RiskAnalyzer():
         total_losses = []
         for index, position in self.positions.iterrows():
             symbol = position['symbol']
-            shares = position['shares']
-            entry_price = position['entry_price']
-            strike_price = position['strike_price']
-            premium = position['premium']
+            shares = float(position['shares'])
+            entry_price = float(position['entry_price'])
+            strike_price = float(position['strike_price'])
+            premium = float(position['premium'])
             expiry_date = position['expiry_date']
-            iv = position['iv']  
+            iv = float(position['iv'])  
             T = (pd.to_datetime(expiry_date) - pd.to_datetime('today')).days / 365.0
-            S0_raw = data_access().get_latest_price(symbol)
+            S0_raw, _ = data_access().get_latest_price(symbol)
             if S0_raw is None:
                 continue
             S0 = float(S0_raw)
@@ -88,14 +88,14 @@ class RiskAnalyzer():
     
     async def _es_contribution(self, position, total_es, alpha, n_simulations, risk_free=0.0408):
         symbol = position['symbol']
-        shares = position['shares']
-        entry_price = position['entry_price']
-        strike_price = position['strike_price']
-        premium = position['premium']
+        shares = float(position['shares'])
+        entry_price = float(position['entry_price'])
+        strike_price = float(position['strike_price'])
+        premium = float(position['premium'])
         expiry_date = position['expiry_date']
-        iv = position['iv']  
+        iv = float(position['iv'])  
         T = (pd.to_datetime(expiry_date) - pd.to_datetime('today')).days / 365.0
-        S0_raw = data_access().get_latest_price(symbol)
+        S0_raw, _ = data_access().get_latest_price(symbol)
         if S0_raw is None:
             return symbol, 0
         S0 = float(S0_raw)
@@ -148,14 +148,44 @@ class RiskAnalyzer():
         signal = getattr(self.portfolio, "signal", None)
         if signal is None or self.latest_history.empty:
             return
-        rel_signals = await signal.relative_signal(self.portfolio.latest_history)
+
+        # Use full market data for relative signal calculation to ensure correct z-scores
+        market_prices = data_access().get_all_closes()
+        
+        # Align and merge portfolio's real-time history into market prices
+        if not market_prices.empty:
+            # Union of indices to include potentially new real-time timestamp
+            combined_index = market_prices.index.union(self.latest_history.index).sort_values()
+            combined_prices = market_prices.reindex(combined_index)
+            
+            # Forward fill market data for the new timestamp (assuming unchanged for non-portfolio assets)
+            combined_prices = combined_prices.ffill()
+            
+            # Update held positions with their fresh real-time data
+            for col in self.latest_history.columns:
+                if col in combined_prices.columns:
+                    combined_prices[col].update(self.latest_history[col])
+        else:
+            # Fallback if market data is missing (shouldn't happen normally)
+            combined_prices = self.latest_history
+
+        rel_signals = await signal.relative_signal(combined_prices)
+        
         low_percentile = self.momentum_config.low_percentile
         high_percentile = self.momentum_config.high_percentile
         # get low and high from norm ppf
         low = norm.ppf(low_percentile)
         high = norm.ppf(high_percentile)
-        # filter the positions for exit signals
-        exit_signals = rel_signals[rel_signals < high]
+        
+        # Filter signals for current positions
+        current_symbols = self.positions['symbol'].tolist()
+        # Intersect with available signals
+        valid_symbols = [s for s in current_symbols if s in rel_signals.index]
+        my_signals = rel_signals[valid_symbols]
+
+        # filter the positions for exit signals using LOW threshold
+        exit_signals = my_signals[my_signals < low]
+        
         for symbol, rel_val in exit_signals.items():
             warn = f"EXIT: {symbol} has generated an exit signal with relative signal {rel_val:.2f}."
             if self.bot:
@@ -180,10 +210,12 @@ class RiskAnalyzer():
                     if self.bot:
                         await self.bot.send_message(self.uid, warn)
                 # check potential entry positions
+                # Entry signals should be checked against the HIGH threshold
                 entry_signals = rel_signals[rel_signals >= high]
                 if not entry_signals.empty:
                     warn += "Potential new entry positions based on current signals:\n"
-                    for entry_symbol, entry_signal in entry_signals.items():
+                    # Limit to top 5 to avoid spam
+                    for entry_symbol, entry_signal in entry_signals.sort_values(ascending=False).head(5).items():
                         warn += f"{entry_symbol} with relative signal {entry_signal:.2f}\n"
                     if self.bot:
                         await self.bot.send_message(self.uid, warn)
@@ -199,19 +231,28 @@ class RiskAnalyzer():
                 continue
             price_change = abs(latest - S0) / S0
             if price_change >= abs_threshold:
-                warning = f"Alert: {symbol} price changed by {price_change*100:.2f}% which exceeds the absolute threshold of {abs_threshold*100:.2f}%."
+                warning = f"""ABSOLUTE THRESHOLD: {symbol} price changed by {price_change*100:.2f}% which exceeds the absolute threshold of {abs_threshold*100:.2f}%. Entry price was {S0:.2f}. Latest price is {latest:.2f}."""
                 if self.bot:
                     await self.bot.send_message(self.uid, warning)
     
     async def option_roll_warn(self):
+        today = pd.Timestamp.now().date()
         for index, position in self.positions.iterrows():
             symbol = position['symbol']
             expiry_date = position['expiry_date']
             days_to_expiry = (pd.to_datetime(expiry_date) - pd.to_datetime('today')).days
             if days_to_expiry <= self.momentum_config.roll_min_dtm:
-                warning = f"Alert: {symbol} option is nearing expiry in {days_to_expiry} days. Consider rolling the position."
+                # Check if we already warned today
+                last_warn = self.portfolio.roll_warn_tracker.get(symbol)
+                if last_warn == today:
+                    continue
+
+                warning = f"OPTION ROLL: {symbol} option is nearing expiry in {days_to_expiry} days. Consider rolling the position."
                 if self.bot:
                     await self.bot.send_message(self.uid, warning)
+                
+                # Update tracker
+                self.portfolio.roll_warn_tracker[symbol] = today
 
     async def price_change_warn(self):
         """Fallback price change check; reuses abs threshold warn."""

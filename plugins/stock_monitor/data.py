@@ -111,12 +111,12 @@ class data_access:
         time_series = data.get('Time Series (1min)', {})
         if not time_series:
             print(f"No intraday data available for {symbol}.")
-            return
+            return None, None
         latest_time = max(time_series.keys())
         latest_data = time_series[latest_time]
-        latest_price = latest_data['4. close']
+        latest_price = float(latest_data['4. close'])
         print(f"Latest price for {symbol} at {latest_time} is {latest_price}.")
-        return latest_price
+        return latest_price, latest_time
 
     def get_historical_data(self, symbol, start_date, end_date):
         file_path = f'sp500_data/{symbol}.csv'
@@ -127,9 +127,14 @@ class data_access:
         mask = (df.index >= pd.to_datetime(start_date)) & (df.index <= pd.to_datetime(end_date))
         filtered_df = df.loc[mask]
         filtered_df = filtered_df['4. close'].astype(float)
-        latest_price = self.get_latest_price(symbol)
+        latest_price, latest_time = self.get_latest_price(symbol)
         if latest_price is not None and not filtered_df.empty:
-            filtered_df.iloc[-1] = float(latest_price)
+            last_date = filtered_df.index[-1]
+            latest_date = pd.to_datetime(latest_time)
+            if latest_date.date() == last_date.date():
+                filtered_df.iloc[-1] = latest_price
+            elif latest_date > last_date:
+                filtered_df.loc[latest_date] = latest_price
         return filtered_df
     
     async def get_option_chain(self, symbol):

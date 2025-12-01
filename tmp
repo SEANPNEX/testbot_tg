@@ -1,0 +1,1 @@
+export ALPHAVANTAGE_API_KEY=EJ8DC9PVTJIZIL5N && export PYTHONPATH=$PYTHONPATH:/Users/sean/workspace/testbot_tg && /Users/sean/workspace/testbot_tg/.venv/bin/python /Users/sean/workspace/testbot_tg/tests/test_risk_warnings.py

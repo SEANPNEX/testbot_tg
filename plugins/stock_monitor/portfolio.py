@@ -22,6 +22,7 @@ class Portfolio:
         # lazily loaded state
         self._positions: Optional[pd.DataFrame] = None
         self._latest_history: Optional[pd.DataFrame] = None
+        self.roll_warn_tracker = {}
 
     @property
     def positions(self) -> pd.DataFrame:
@@ -42,12 +43,18 @@ class Portfolio:
     @latest_history.setter
     def latest_history(self, value: pd.DataFrame):
         self._latest_history = value
+
+    def refresh_history(self):
+        self._latest_history = None
+
     
     def get_total_value(self):
         if self.positions.empty:
             return 0
         else:
-            return self.positions['shares'] * self.positions['entry_price'].sum()
+            shares = pd.to_numeric(self.positions['shares'], errors='coerce')
+            entry_price = pd.to_numeric(self.positions['entry_price'], errors='coerce')
+            return (shares * entry_price).sum()
         
 
     def access_latest_history(self):
@@ -81,18 +88,26 @@ class Portfolio:
         high_percentile = momentum_config.high_percentile
         high = norm.ppf(high_percentile)
         # take top_n strongest signals above the high threshold
-        entry_signals = rel_signals[rel_signals >= high].sort_values(ascending=False).head(momentum_config.top_n)
+        entry_signals = rel_signals[rel_signals >= high].sort_values(ascending=False)
         positions = []
         for symbol, _rel in entry_signals.items():
+            if len(positions) >= momentum_config.top_n:
+                break
             budget = momentum_config.budget_per_position
             if symbol not in prices.columns:
                 continue
             hist_col = prices[symbol].dropna()
             if hist_col.empty:
                 continue
-            latest_price = hist_col.iloc[-1]
+            # fetch real time price for accurate entry
+            rt_price, _ = self.data_accessor.get_latest_price(symbol)
+            if rt_price is not None:
+                latest_price = float(rt_price)
+            else:
+                latest_price = hist_col.iloc[-1]
+
             shares = int(budget // latest_price)
-            selected_option = await self.select_option(symbol)
+            selected_option = await self.select_option(symbol, latest_price)
             if selected_option is None:
                 continue  # skip if no suitable option found
             position = {
@@ -103,19 +118,22 @@ class Portfolio:
                 'premium': selected_option['bid'],
                 'expiry_date': selected_option['expiration'],
                 'iv': selected_option['implied_volatility'],
+                'gamma': selected_option['gamma'],
                 'risk_free': 0.0408,  # hardcoded for now
             }
+            # write signal to log 
+            nonebot.logger.debug(f"Created new position for {symbol}: {position}, signal: {_rel}")
             positions.append(position)
         self.positions = pd.DataFrame(positions)
         # cache latest history for created symbols only
-        self.latest_history = prices[entry_signals.index]
+        self.latest_history = self.access_latest_history()
         self.save_positions()
         nonebot.logger.info(f"Created new positions for UID {self.uid}: {self.positions}")
         if self.bot:
             msg = f"Created new positions:\n{self.positions.to_string(index=False)}"
             await self.bot.send_message(chat_id=self.uid, text=msg)
 
-    async def select_option(self, symbol: str):
+    async def select_option(self, symbol: str, latest_price: float):
         option_chain = await self.data_accessor.get_option_chain(symbol)
         # sanity checks and coercions
         if option_chain is None or option_chain.empty:
@@ -124,6 +142,8 @@ class Portfolio:
         print(option_chain)
         # convert to num
         option_chain['delta'] = pd.to_numeric(option_chain['delta'], errors='coerce')
+        option_chain['gamma'] = pd.to_numeric(option_chain['gamma'], errors='coerce')
+        option_chain['strike'] = pd.to_numeric(option_chain['strike'], errors='coerce')
         # convert to datetime
         option_chain['expiration'] = pd.to_datetime(option_chain['expiration'], errors='coerce')
         # compute days to expiration
@@ -137,16 +157,19 @@ class Portfolio:
             & (option_chain['delta'].abs() <= target_delta_range[1])
             & (option_chain['expiration'] >= time_range_low)
             & (option_chain['expiration'] <= time_range_high)
+            & (option_chain['strike'] > latest_price) # OTM check
+            & (option_chain['gamma'] >= 0.001)
+            & (option_chain['gamma'] <= 0.015)
         )
         filtered_options = option_chain[mask]
         if filtered_options.empty:
             nonebot.logger.warning(
-                f"No suitable options found for {symbol} with given delta and DTM ranges. This asset should be skipped."
+                f"No suitable options found for {symbol} with given delta, DTM ranges, and OTM/Gamma checks. This asset should be skipped."
             )
             if self.bot:
                 await self.bot.send_message(
                     chat_id=self.uid,
-                    text=f"Warning: No suitable options found for {symbol} with given delta and DTM ranges. This asset will be skipped.",
+                    text=f"Warning: No suitable options found for {symbol} with given delta, DTM ranges, and OTM/Gamma checks. This asset will be skipped.",
                 )
             return None
         filtered_options = filtered_options.sort_values(by='implied_volatility', ascending=False)

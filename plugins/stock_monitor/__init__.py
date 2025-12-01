@@ -42,10 +42,17 @@ async def setup_environment(bot: Bot = None):
     if not os.path.exists('sp500_data'):
         data_accessor.fetch_initial_data()
     # else:
-    #     data_accessor.update_data()
+        # data_accessor.update_data()
     if not os.path.exists('portfolios'):
         os.makedirs('portfolios')
     # monitor existing portfolios
+
+update_data = on_command("update_data", rule=to_me(), aliases={"ud"})
+
+@update_data.handle()
+async def _(bot: Bot, event: MessageEvent):
+    data_accessor.update_data()
+    await bot.send_message(chat_id=event.get_user_id(), text="Data updated successfully.")
 
 async def load_existing_portfolios(bot: Bot = None):
     portfolios = {}
@@ -123,6 +130,7 @@ async def daily_es_report():
         await risk_analyzer.send_es_report()
 
 async def monitor_portfolios(portfolio):
+    portfolio.refresh_history()
     risk_analyzer = RiskAnalyzer(portfolio, getattr(portfolio, "bot", None))
     await risk_analyzer.es_risk_warn()
     await risk_analyzer.price_change_warn()
