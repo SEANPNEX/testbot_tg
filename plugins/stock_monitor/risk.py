@@ -180,11 +180,12 @@ class RiskAnalyzer():
         # Filter signals for current positions
         current_symbols = self.positions['symbol'].tolist()
         # Intersect with available signals
-        valid_symbols = [s for s in current_symbols if s in rel_signals.index]
+        valid_symbols = [s for s in current_symbols if s in rel_sigrnals.index]
         my_signals = rel_signals[valid_symbols]
+        nonebot.logger.info(f"my_signals: {my_signals}")
 
         # filter the positions for exit signals using LOW threshold
-        exit_signals = my_signals[my_signals < low]
+        exit_signals = my_signals[my_signals < high]
         
         for symbol, rel_val in exit_signals.items():
             warn = f"EXIT: {symbol} has generated an exit signal with relative signal {rel_val:.2f}."
