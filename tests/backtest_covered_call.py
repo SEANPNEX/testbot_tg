@@ -42,7 +42,7 @@ def find_strike_for_delta(S, T, r, sigma, target_delta):
         return S * 1.05 # Fallback
 
 # --- 2. Data Loading ---
-def get_all_closes(data_dir="sp500_data", start_date="2020-01-01"):
+def get_all_closes(data_dir="sp500_data", start_date="2020-01-01", end_date="2025-12-01"):
     data_path = Path(data_dir)
     if not data_path.exists():
         raise FileNotFoundError(f"{data_dir} directory not found.")
@@ -58,6 +58,7 @@ def get_all_closes(data_dir="sp500_data", start_date="2020-01-01"):
             df.index = pd.to_datetime(df.index)
             s = df["4. close"].astype(float)
             s = s[s.index >= pd.Timestamp(start_date)]
+            s = s[s.index <= pd.Timestamp(end_date)]
             s.name = symbol
             series_list.append(s)
         except Exception:
@@ -74,11 +75,20 @@ def get_all_closes(data_dir="sp500_data", start_date="2020-01-01"):
     return combined
 
 # --- 3. Signal Calculation ---
-def calculate_momentum_zscores(prices, window=30):
-    momentum = prices.pct_change(window)
-    mean = momentum.mean(axis=1)
-    std = momentum.std(axis=1)
-    zscores = momentum.sub(mean, axis=0).div(std, axis=0)
+from fintech_utils.momentum.signal import MomentumSignal
+from fintech_utils.momentum.config import MomentumConfig
+import asyncio
+import inspect
+
+async def calculate_momentum_zscores(prices, window=30):
+    # Use the library's MomentumSignal
+    config = MomentumConfig(momentum_window=window)
+    signal_gen = MomentumSignal(config)
+    # Use internal method _zscore_rolling to get full history for backtest
+    # relative_signal only returns the latest slice
+    zscores = signal_gen._zscore_rolling(prices)
+    if inspect.isawaitable(zscores):
+        zscores = await zscores
     return zscores
 
 # --- 4. Backtest Engine (Covered Call) ---
@@ -271,10 +281,10 @@ def run_covered_call_backtest(prices, zscores):
     return pd.DataFrame(closed_trades)
 
 # --- Execution ---
-if __name__ == "__main__":
-    prices = get_all_closes()
+async def main():
+    prices = get_all_closes(data_dir="../sp500_data", start_date="2025-06-01", end_date="2025-12-01")
     if not prices.empty:
-        zscores = calculate_momentum_zscores(prices, window=30) # Window 30 from assumptions
+        zscores = await calculate_momentum_zscores(prices, window=30) # Window 30 from assumptions
         results = run_covered_call_backtest(prices, zscores)
         
         print(f"\nTotal Trades: {len(results)}")
@@ -286,3 +296,6 @@ if __name__ == "__main__":
             results.to_csv("covered_call_backtest_results.csv", index=False)
     else:
         print("No data.")
+
+if __name__ == "__main__":
+    asyncio.run(main())
